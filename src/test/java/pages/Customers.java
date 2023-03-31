@@ -106,7 +106,7 @@ public class Customers extends Utils {
         utils.checkValue(firstnameEl_col2, "Neville");
         utils.checkValue(lastnameEl_col2, "Longbottom");
     }
-    public void getCountEl() {
-        Assertions.assertEquals(allElementsInList.size() - 1, 0);
+    public void getCountEl(int num) {
+        Assertions.assertEquals(allElementsInList.size() - 1, num);
     }
 }
