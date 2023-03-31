@@ -1,5 +1,4 @@
 package tests;
-
 import utils.WebdriverSetting;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -7,8 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import pages.Customers;
 import pages.StartPage;
 
-public class FindCustomer extends WebdriverSetting {
-
+public class FindCustomerTests extends WebdriverSetting {
     private final String customersTabLink = "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list";
 
     @Test

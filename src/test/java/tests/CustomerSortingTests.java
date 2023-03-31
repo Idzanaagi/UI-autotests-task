@@ -1,15 +1,13 @@
 package tests;
 
-import utils.WebdriverSetting;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.support.PageFactory;
-import pages.StartPage;
 import pages.Customers;
+import pages.StartPage;
+import utils.WebdriverSetting;
 
-
-public class CustomerSorting extends WebdriverSetting {
-
+public class CustomerSortingTests extends WebdriverSetting {
     private final String customersTabLink = "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list";
 
     @Test
@@ -24,7 +22,6 @@ public class CustomerSorting extends WebdriverSetting {
         customers.compareMiddleElInDescendingOrder();
         customers.compareLastElInDescendingOrder();
     }
-
     @Test
     @DisplayName("CS-2, sort in ascending order")
     public void sortCustomersInAscendingOrder() {

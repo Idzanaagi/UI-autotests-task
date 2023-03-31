@@ -1,14 +1,14 @@
 package tests;
 
+import utils.WebdriverSetting;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.support.PageFactory;
 import pages.AddCust;
 import pages.StartPage;
 import pages.OpenAccount;
-import utils.WebdriverSetting;
 
-public class CreateCustomer extends WebdriverSetting {
+public class CreateCustomerTests extends WebdriverSetting {
     private final String addCustomerTabLink = "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/addCust";
     private final String customersTabLink = "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list";
     private final String openAccountTabLink = "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/openAccount";
