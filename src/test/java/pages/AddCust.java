@@ -78,5 +78,4 @@ public class AddCust extends Utils {
     public void checkLastNameFieldFocus() {
         Assertions.assertEquals(driver.switchTo().activeElement(), lastNameField);
     }
-
 }

@@ -24,6 +24,7 @@ public class CustomerSorting extends WebdriverSetting {
         customers.compareMiddleElInDescendingOrder();
         customers.compareLastElInDescendingOrder();
     }
+
     @Test
     @DisplayName("CS-2, sort in ascending order")
     public void sortCustomersInAscendingOrder() {
@@ -37,5 +38,4 @@ public class CustomerSorting extends WebdriverSetting {
         customers.compareMiddleElInAscendingOrder();
         customers.compareLastElInAscendingOrder();
     }
-
 }

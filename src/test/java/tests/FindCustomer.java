@@ -8,6 +8,7 @@ import pages.Customers;
 import pages.StartPage;
 
 public class FindCustomer extends WebdriverSetting {
+
     private final String customersTabLink = "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list";
 
     @Test

@@ -13,9 +13,6 @@ public class CreateCustomer extends WebdriverSetting {
     private final String customersTabLink = "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list";
     private final String openAccountTabLink = "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/openAccount";
 
-    StartPage startPage = PageFactory.initElements(driver, StartPage.class);
-    AddCust addCust = PageFactory.initElements(driver, AddCust.class);
-
     @Test
     @DisplayName("CC-1, content of modal msg")
     public void checkContentModalMsg() {
@@ -29,7 +26,6 @@ public class CreateCustomer extends WebdriverSetting {
         addCust.clickAddCustomerBtn();
         addCust.getAlertMessage();
     }
-
     @Test
     @DisplayName("CC-2, add customer to customer page")
     public void checkAddCustomerToCustomerPage() {
@@ -78,7 +74,6 @@ public class CreateCustomer extends WebdriverSetting {
         addCust.clickAddCustomerBtn();
         addCust.checkFirstNameFieldFocus();
     }
-
     @Test
     @DisplayName("CC-5, try add customer with partially blank data")
     public void checkAddCustomerWithPartiallyBlankData() {
