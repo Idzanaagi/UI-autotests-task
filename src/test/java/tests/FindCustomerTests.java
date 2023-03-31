@@ -18,6 +18,7 @@ public class FindCustomerTests extends WebdriverSetting {
         startPage.open(customersTabLink);
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerFieldForFirstNameCheck();
+        customers.getCountEl(1);
         customers.compareFirstNameValue();
     }
     @Test
@@ -29,6 +30,7 @@ public class FindCustomerTests extends WebdriverSetting {
         startPage.open(customersTabLink);
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerFieldForLastNameCheck();
+        customers.getCountEl(1);
         customers.compareLastNameValue();
     }
     @Test
@@ -40,6 +42,7 @@ public class FindCustomerTests extends WebdriverSetting {
         startPage.open(customersTabLink);
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerFieldForPostCode();
+        customers.getCountEl(1);
         customers.comparePostCodeValue();
     }
     @Test
@@ -51,6 +54,7 @@ public class FindCustomerTests extends WebdriverSetting {
         startPage.open(customersTabLink);
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerFieldForAccountNumber();
+        customers.getCountEl(1);
         customers.compareAccountNumberValue();
     }
     @Test
@@ -62,7 +66,7 @@ public class FindCustomerTests extends WebdriverSetting {
         startPage.open(customersTabLink);
         customers.clickSearchCustomersField();
         customers.findNonExistentCustomer();
-        customers.getCountEl();
+        customers.getCountEl(0);
     }
     @Test
     @DisplayName("FC-6, find multiple customers")
@@ -73,6 +77,7 @@ public class FindCustomerTests extends WebdriverSetting {
         startPage.open(customersTabLink);
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerFieldForMultipleSearch();
+        customers.getCountEl(2);
         customers.compareMultipleSearchValue();
     }
 }
