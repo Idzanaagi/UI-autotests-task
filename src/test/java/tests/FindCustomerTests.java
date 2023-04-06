@@ -12,8 +12,8 @@ public class FindCustomerTests extends WebdriverSetting {
     @Test
     @DisplayName("FC-1, find by first name")
     public void findCustomersByFirstName() {
-        StartPage startPage = PageFactory.initElements(driver, StartPage.class);
-        Customers customers = PageFactory.initElements(driver, Customers.class);
+        StartPage startPage = new StartPage(driver);
+        Customers customers = new Customers(driver);
 
         startPage.open(customersTabLink);
         customers.clickSearchCustomersField();
@@ -24,8 +24,8 @@ public class FindCustomerTests extends WebdriverSetting {
     @Test
     @DisplayName("FC-2, find by last name")
     public void findCustomersByLastName() {
-        StartPage startPage = PageFactory.initElements(driver, StartPage.class);
-        Customers customers = PageFactory.initElements(driver, Customers.class);
+        StartPage startPage = new StartPage(driver);
+        Customers customers = new Customers(driver);
 
         startPage.open(customersTabLink);
         customers.clickSearchCustomersField();
@@ -36,8 +36,8 @@ public class FindCustomerTests extends WebdriverSetting {
     @Test
     @DisplayName("FC-3, find by post code")
     public void findCustomersByPostCode() {
-        StartPage startPage = PageFactory.initElements(driver, StartPage.class);
-        Customers customers = PageFactory.initElements(driver, Customers.class);
+        StartPage startPage = new StartPage(driver);
+        Customers customers = new Customers(driver);
 
         startPage.open(customersTabLink);
         customers.clickSearchCustomersField();
@@ -48,8 +48,8 @@ public class FindCustomerTests extends WebdriverSetting {
     @Test
     @DisplayName("FC-4, find by account")
     public void findCustomersByAccountNumber() {
-        StartPage startPage = PageFactory.initElements(driver, StartPage.class);
-        Customers customers = PageFactory.initElements(driver, Customers.class);
+        StartPage startPage = new StartPage(driver);
+        Customers customers = new Customers(driver);
 
         startPage.open(customersTabLink);
         customers.clickSearchCustomersField();
@@ -60,8 +60,8 @@ public class FindCustomerTests extends WebdriverSetting {
     @Test
     @DisplayName("FC-5, find non-existed customer")
     public void findNonExistedCustomer() {
-        StartPage startPage = PageFactory.initElements(driver, StartPage.class);
-        Customers customers = PageFactory.initElements(driver, Customers.class);
+        StartPage startPage = new StartPage(driver);
+        Customers customers = new Customers(driver);
 
         startPage.open(customersTabLink);
         customers.clickSearchCustomersField();
@@ -71,8 +71,8 @@ public class FindCustomerTests extends WebdriverSetting {
     @Test
     @DisplayName("FC-6, find multiple customers")
     public void findMultipleCustomers() {
-        StartPage startPage = PageFactory.initElements(driver, StartPage.class);
-        Customers customers = PageFactory.initElements(driver, Customers.class);
+        StartPage startPage = new StartPage(driver);
+        Customers customers = new Customers(driver);
 
         startPage.open(customersTabLink);
         customers.clickSearchCustomersField();

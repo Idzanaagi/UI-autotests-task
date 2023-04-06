@@ -13,8 +13,8 @@ public class CustomerSortingTests extends WebdriverSetting {
     @Test
     @DisplayName("CS-1, sort in descending order")
     public void sortCustomersInDescendingOrder() {
-        StartPage startPage = PageFactory.initElements(driver, StartPage.class);
-        Customers customers = PageFactory.initElements(driver, Customers.class);
+        StartPage startPage = new StartPage(driver);
+        Customers customers = new Customers(driver);
 
         startPage.open(customersTabLink);
         customers.sortByFirstName();
@@ -25,8 +25,8 @@ public class CustomerSortingTests extends WebdriverSetting {
     @Test
     @DisplayName("CS-2, sort in ascending order")
     public void sortCustomersInAscendingOrder() {
-        StartPage startPage = PageFactory.initElements(driver, StartPage.class);
-        Customers customers = PageFactory.initElements(driver, Customers.class);
+        StartPage startPage = new StartPage(driver);
+        Customers customers = new Customers(driver);
 
         startPage.open(customersTabLink);
         customers.sortByFirstName();

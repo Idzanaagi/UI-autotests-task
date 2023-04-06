@@ -16,8 +16,8 @@ public class CreateCustomerTests extends WebdriverSetting {
     @Test
     @DisplayName("CC-1, content of modal msg")
     public void checkContentModalMsg() {
-        StartPage startPage = PageFactory.initElements(driver, StartPage.class);
-        AddCust addCust = PageFactory.initElements(driver, AddCust.class);
+        StartPage startPage = new StartPage(driver);
+        AddCust addCust = new AddCust(driver);
 
         startPage.open(addCustomerTabLink);
         addCust.fillFirstName();
@@ -29,8 +29,8 @@ public class CreateCustomerTests extends WebdriverSetting {
     @Test
     @DisplayName("CC-2, add customer to customer page")
     public void checkAddCustomerToCustomerPage() {
-        StartPage startPage = PageFactory.initElements(driver, StartPage.class);
-        AddCust addCust = PageFactory.initElements(driver, AddCust.class);
+        StartPage startPage = new StartPage(driver);
+        AddCust addCust = new AddCust(driver);
 
         startPage.open(addCustomerTabLink);
         addCust.fillFirstName();
@@ -49,9 +49,9 @@ public class CreateCustomerTests extends WebdriverSetting {
     @Test
     @DisplayName("CC-3, add customer to open account page")
     public void checkAddCustomerToOpenAccountPage() {
-        StartPage startPage = PageFactory.initElements(driver, StartPage.class);
-        AddCust addCust = PageFactory.initElements(driver, AddCust.class);
-        OpenAccount openAccount = PageFactory.initElements(driver, OpenAccount.class);
+        StartPage startPage = new StartPage(driver);
+        AddCust addCust = new AddCust(driver);
+        OpenAccount openAccount = new OpenAccount(driver);
 
         startPage.open(addCustomerTabLink);
         addCust.fillFirstName();
@@ -67,8 +67,8 @@ public class CreateCustomerTests extends WebdriverSetting {
     @Test
     @DisplayName("CC-4, try add customer with empty data")
     public void checkAddCustomerWithAllEmptyData() {
-        StartPage startPage = PageFactory.initElements(driver, StartPage.class);
-        AddCust addCust = PageFactory.initElements(driver, AddCust.class);
+        StartPage startPage = new StartPage(driver);
+        AddCust addCust = new AddCust(driver);
 
         startPage.open(addCustomerTabLink);
         addCust.clickAddCustomerBtn();
@@ -77,8 +77,8 @@ public class CreateCustomerTests extends WebdriverSetting {
     @Test
     @DisplayName("CC-5, try add customer with partially blank data")
     public void checkAddCustomerWithPartiallyBlankData() {
-        StartPage startPage = PageFactory.initElements(driver, StartPage.class);
-        AddCust addCust = PageFactory.initElements(driver, AddCust.class);
+        StartPage startPage = new StartPage(driver);
+        AddCust addCust = new AddCust(driver);
 
         startPage.open(addCustomerTabLink);
         addCust.fillFirstName();
