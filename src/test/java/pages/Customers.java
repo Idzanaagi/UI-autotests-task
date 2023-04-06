@@ -16,27 +16,27 @@ public class Customers {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div[2]/div/div/table/tbody/tr[1]/td[1]") /* Без фильтрации, когда в таблице несколько элементов*/
+    @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr[1]/td[1]") /* Без фильтрации, когда в таблице несколько элементов*/
     private WebElement firstElementInTableColumn;
-    @FindBy(xpath = "/html/body/div/div/div[2]/div/div[2]/div/div/table/tbody/tr[3]/td[1]")
+    @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr[3]/td[1]")
     private WebElement middleElementInFirstNameColumn;
-    @FindBy(xpath = "/html/body/div/div/div[2]/div/div[2]/div/div/table/tbody/tr[5]/td[1]")
+    @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr[5]/td[1]")
     private WebElement lastElementInFirstNameColumn;
-    @FindBy(xpath = "/html/body/div/div/div[2]/div/div[2]/div/div/table/thead/tr/td[1]/a")
+    @FindBy(xpath = "//table[contains(@class,'table')]/thead/tr/td[1]")
     private WebElement firstNameCeil;
-    @FindBy(xpath = "/html/body/div/div/div[2]/div/div[2]/div/form/div/div/input")
+    @FindBy(xpath = "//div[@class='input-group']/input")
     private WebElement searchCustomersField;
-    @FindBy(xpath = "/html/body/div/div/div[2]/div/div[2]/div/div/table/tbody/tr/td[1]") /* С фильтрацией, когда в таблице только один элемент */
+    @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr/td[1]") /* С фильтрацией, когда в таблице только один элемент */
     private WebElement firstnameValue;
-    @FindBy(xpath = "/html/body/div/div/div[2]/div/div[2]/div/div/table/tbody/tr/td[2]")
+    @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr/td[2]")
     private WebElement lastnameValue;
-    @FindBy(xpath = "/html/body/div/div/div[2]/div/div[2]/div/div/table/tbody/tr/td[3]")
+    @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr/td[3]")
     private WebElement postCodeElement;
-    @FindBy(xpath = "/html/body/div/div/div[2]/div/div[2]/div/div/table/tbody/tr/td[4]")
+    @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr/td[4]")
     private WebElement accountNumberElement;
-    @FindBy(xpath = "/html/body/div/div/div[2]/div/div[2]/div/div/table/tbody/tr[2]/td[1]") /* С фильтрацией, когда в таблице больше 1 элемента */
+    @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr[2]/td[1]") /* С фильтрацией, когда в таблице больше 1 элемента */
     private WebElement firstnameEl_col2;
-    @FindBy(xpath = "/html/body/div/div/div[2]/div/div[2]/div/div/table/tbody/tr[2]/td[2]")
+    @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr[2]/td[2]")
     private WebElement lastnameEl_col2;
     @FindAll({ @FindBy(tagName = "tr"), })
     private List<WebElement> allElementsInList;
@@ -54,7 +54,6 @@ public class Customers {
         Assertions.assertEquals(firstElementInTableColumn.getText(), "Albus");
     }
     public void compareMiddleElInAscendingOrder() {
-        System.out.println(middleElementInFirstNameColumn.getText());
         Assertions.assertEquals(middleElementInFirstNameColumn.getText(), "Hermoine");
     }
     public void compareLastElInAscendingOrder() {
