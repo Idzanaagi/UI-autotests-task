@@ -5,14 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
-import utils.Utils;
 
 import java.util.List;
 
-public class Customers extends Utils {
+public class Customers {
     WebDriver driver;
-    Utils utils = new Utils();
-
     public Customers(WebDriver driver) {
         this.driver = driver;
     }
@@ -46,65 +43,63 @@ public class Customers extends Utils {
         firstNameCeil.click();
     }
     public void compareFirstElInDescendingOrder() {
-        utils.checkValue(firstElementInTableColumn, "Ron");
-    }
-    public void compareMiddleElInDescendingOrder() {
-        utils.checkValue(middleElementInFirstNameColumn, "Hermoine");
+        Assertions.assertEquals(firstElementInTableColumn.getText(), "Ron");
     }
     public void compareLastElInDescendingOrder() {
-        utils.checkValue(lastElementInFirstNameColumn, "Albus");
+        Assertions.assertEquals(lastElementInFirstNameColumn.getText(), "Albus");
     }
     public void compareFirstElInAscendingOrder() {
-        utils.checkValue(firstElementInTableColumn, "Albus");
+        Assertions.assertEquals(firstElementInTableColumn.getText(), "Albus");
     }
     public void compareMiddleElInAscendingOrder() {
-        utils.checkValue(middleElementInFirstNameColumn, "Hermoine");
+        System.out.println(middleElementInFirstNameColumn.getText());
+        Assertions.assertEquals(middleElementInFirstNameColumn.getText(), "Hermoine");
     }
     public void compareLastElInAscendingOrder() {
-        utils.checkValue(lastElementInFirstNameColumn, "Ron");
+        Assertions.assertEquals(lastElementInFirstNameColumn.getText(), "Ron");
     }
     public void clickSearchCustomersField() {
         searchCustomersField.click();
     }
     public void fillSearchCustomerFieldForFirstNameCheck() {
-        utils.fillField(searchCustomersField, "ha");
+        searchCustomersField.sendKeys("ha");
     }
     public void compareFirstNameValue() {
-        utils.checkValue(firstnameValue, "Harry");
-        utils.checkValue(postCodeElement, "E725JB");
+        Assertions.assertEquals(firstnameValue.getText(), "Harry");
+        Assertions.assertEquals(postCodeElement.getText(), "E725JB");
     }
     public void fillSearchCustomerFieldForLastNameCheck() {
-        utils.fillField(searchCustomersField, "lo");
+        searchCustomersField.sendKeys("lo");
     }
     public void compareLastNameValue() {
-        utils.checkValue(firstnameValue, "Neville");
-        utils.checkValue(lastnameValue, "Longbottom");
+        Assertions.assertEquals(firstnameValue.getText(), "Neville");
+        Assertions.assertEquals(lastnameValue.getText(), "Longbottom");
     }
     public void fillSearchCustomerFieldForPostCode() {
-        utils.fillField(searchCustomersField, "e7");
+        searchCustomersField.sendKeys("e7");
     }
     public void comparePostCodeValue() {
-        utils.checkValue(postCodeElement, "E725JB");
-        utils.checkValue(firstnameValue, "Harry");
+        Assertions.assertEquals(postCodeElement.getText(),"E725JB");
+        Assertions.assertEquals(firstnameValue.getText(),"Harry");
     }
     public void fillSearchCustomerFieldForAccountNumber() {
-        utils.fillField(searchCustomersField, "1014");
+        searchCustomersField.sendKeys("1014");
     }
     public void compareAccountNumberValue() {
-        utils.checkValue(accountNumberElement, "1013 1014 1015");
-        utils.checkValue(lastnameValue, "Longbottom");
+        Assertions.assertEquals(accountNumberElement.getText(),"1013 1014 1015");
+        Assertions.assertEquals(lastnameValue.getText(),"Longbottom");
     }
     public void findNonExistentCustomer() {
-        utils.fillField(searchCustomersField, "dd");
+        searchCustomersField.sendKeys("dd");
     }
     public void fillSearchCustomerFieldForMultipleSearch() {
-        utils.fillField(searchCustomersField, "ne");
+        searchCustomersField.sendKeys("ne");
     }
     public void compareMultipleSearchValue() {
-        utils.checkValue(firstnameValue, "Hermoine");
-        utils.checkValue(lastnameValue, "Granger");
-        utils.checkValue(firstnameEl_col2, "Neville");
-        utils.checkValue(lastnameEl_col2, "Longbottom");
+        Assertions.assertEquals(firstnameValue.getText(),"Hermoine");
+        Assertions.assertEquals(lastnameValue.getText(),"Granger");
+        Assertions.assertEquals(firstnameEl_col2.getText(),"Neville");
+        Assertions.assertEquals(lastnameEl_col2.getText(),"Longbottom");
     }
     public void getCountEl(int num) {
         Assertions.assertEquals(allElementsInList.size() - 1, num);

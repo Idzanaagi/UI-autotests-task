@@ -19,7 +19,7 @@ public class CustomerSortingTests extends WebdriverSetting {
         startPage.open(customersTabLink);
         customers.sortByFirstName();
         customers.compareFirstElInDescendingOrder();
-        customers.compareMiddleElInDescendingOrder();
+        customers.compareMiddleElInAscendingOrder();
         customers.compareLastElInDescendingOrder();
     }
     @Test
