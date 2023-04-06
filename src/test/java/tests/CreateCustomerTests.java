@@ -9,7 +9,9 @@ import pages.StartPage;
 import pages.OpenAccount;
 
 public class CreateCustomerTests extends WebdriverSetting {
-
+    private final String firstNameData = "testfirstname";
+    private final String lastNameData = "testlastname";
+    private final String postCodeData = "testpostcode";
     @Test
     @DisplayName("CC-1, content of modal msg")
     public void checkContentModalMsg() {
@@ -17,9 +19,9 @@ public class CreateCustomerTests extends WebdriverSetting {
         AddCust addCust = new AddCust(driver);
 
         startPage.openAddCustomerTab();
-        addCust.fillFirstName();
-        addCust.fillLastName();
-        addCust.fillPostCode();
+        addCust.fillFirstName(firstNameData);
+        addCust.fillLastName(lastNameData);
+        addCust.fillPostCode(postCodeData);
         addCust.clickAddCustomerBtn();
         addCust.getAlertMessage();
     }
@@ -30,9 +32,9 @@ public class CreateCustomerTests extends WebdriverSetting {
         AddCust addCust = new AddCust(driver);
 
         startPage.openAddCustomerTab();
-        addCust.fillFirstName();
-        addCust.fillLastName();
-        addCust.fillPostCode();
+        addCust.fillFirstName(firstNameData);
+        addCust.fillLastName(lastNameData);
+        addCust.fillPostCode(postCodeData);
         addCust.clickAddCustomerBtn();
         addCust.getAlertMessage();
         addCust.confirmAction();
@@ -51,9 +53,9 @@ public class CreateCustomerTests extends WebdriverSetting {
         OpenAccount openAccount = new OpenAccount(driver);
 
         startPage.openAddCustomerTab();
-        addCust.fillFirstName();
-        addCust.fillLastName();
-        addCust.fillPostCode();
+        addCust.fillFirstName(firstNameData);
+        addCust.fillLastName(lastNameData);
+        addCust.fillPostCode(postCodeData);
         addCust.clickAddCustomerBtn();
         addCust.getAlertMessage();
         addCust.confirmAction();
@@ -78,7 +80,7 @@ public class CreateCustomerTests extends WebdriverSetting {
         AddCust addCust = new AddCust(driver);
 
         startPage.openAddCustomerTab();
-        addCust.fillFirstName();
+        addCust.fillFirstName(firstNameData);
         addCust.clickAddCustomerBtn();
         addCust.checkLastNameFieldFocus();
     }

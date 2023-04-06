@@ -36,14 +36,14 @@ public class AddCust {
     @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr[6]/td[4]")
     private WebElement newCellWithAccountNumber;
 
-    public void fillFirstName() {
-    firstNameField.sendKeys(firstNameData);
+    public void fillFirstName(String value) {
+    firstNameField.sendKeys(value);
 }
-    public void fillLastName() {
-        lastNameField.sendKeys(lastNameData);
+    public void fillLastName(String value) {
+        lastNameField.sendKeys(value);
     }
-    public void fillPostCode() {
-        postCodeField.sendKeys(postCodeData);
+    public void fillPostCode(String value) {
+        postCodeField.sendKeys(value);
     }
     public void clickAddCustomerBtn() {
         addCustomerBtn.click();
