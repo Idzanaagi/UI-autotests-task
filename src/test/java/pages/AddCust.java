@@ -53,10 +53,7 @@ public class AddCust {
         driver.switchTo().alert().accept();
     }
     public boolean isFieldEmpty() {
-        if (firstNameField.getText().isEmpty() && lastNameField.getText().isEmpty() && postCodeField.getText().isEmpty()) {
-            return true;
-        }
-        return false;
+        return firstNameField.getText().isEmpty() && lastNameField.getText().isEmpty() && postCodeField.getText().isEmpty();
     }
     public void compareFirstNameValues() {
     Assertions.assertEquals(newCellWithFirstName.getText(), firstNameData);
