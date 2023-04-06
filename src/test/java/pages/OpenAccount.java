@@ -1,13 +1,12 @@
 package pages;
 
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utils.Utils;
 
-public class OpenAccount extends Utils {
+public class OpenAccount {
     WebDriver driver;
-    Utils utils = new Utils();
     public OpenAccount(WebDriver driver) {this.driver = driver; }
 
     private final String expectedValue = "testfirstname testlastname";
@@ -20,6 +19,6 @@ public class OpenAccount extends Utils {
         customerSelect.click();
     }
     public void checkNewSelectOption() {
-        utils.checkValue(lastCustomerOption, expectedValue);
+        Assertions.assertEquals(lastCustomerOption.getText(),expectedValue);
     }
 }
