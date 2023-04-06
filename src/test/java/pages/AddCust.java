@@ -4,11 +4,9 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utils.Utils;
 
-public class AddCust extends Utils {
+public class AddCust {
     WebDriver driver;
-    Utils utils = new Utils();
     public AddCust(WebDriver driver) {
         this.driver = driver;
     }
@@ -37,13 +35,13 @@ public class AddCust extends Utils {
     private WebElement newCellWithAccountNumber;
 
     public void fillFirstName() {
-        utils.fillField(firstNameField, firstNameData);
-    }
+    firstNameField.sendKeys(firstNameData);
+}
     public void fillLastName() {
-        utils.fillField(lastNameField, lastNameData);
+        lastNameField.sendKeys(lastNameData);
     }
     public void fillPostCode() {
-        utils.fillField(postCodeField, postCodeData);
+        postCodeField.sendKeys(postCodeData);
     }
     public void clickAddCustomerBtn() {
         addCustomerBtn.click();
@@ -61,16 +59,16 @@ public class AddCust extends Utils {
         return false;
     }
     public void compareFirstNameValues() {
-        utils.checkValue(newCellWithFirstName, firstNameData);
-    }
+    Assertions.assertEquals(newCellWithFirstName.getText(), firstNameData);
+}
     public void compareLastNameValues() {
-        utils.checkValue(newCellWithLastName, lastNameData);
+        Assertions.assertEquals(newCellWithLastName.getText(), lastNameData);
     }
     public void comparePostCodeValues() {
-        utils.checkValue(newCellWithPostCode, postCodeData);
+        Assertions.assertEquals(newCellWithPostCode.getText(), postCodeData);
     }
     public void compareAccountNumberValues() {
-        utils.checkValue(newCellWithAccountNumber, emptyValue);
+        Assertions.assertEquals(newCellWithAccountNumber.getText(), emptyValue);
     }
     public void checkFirstNameFieldFocus() {
         Assertions.assertEquals(driver.switchTo().activeElement(), firstNameField);
