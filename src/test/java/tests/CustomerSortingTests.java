@@ -8,7 +8,6 @@ import pages.StartPage;
 import utils.WebdriverSetting;
 
 public class CustomerSortingTests extends WebdriverSetting {
-    private final String customersTabLink = "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list";
 
     @Test
     @DisplayName("CS-1, sort in descending order")
@@ -16,7 +15,7 @@ public class CustomerSortingTests extends WebdriverSetting {
         StartPage startPage = new StartPage(driver);
         Customers customers = new Customers(driver);
 
-        startPage.open(customersTabLink);
+        startPage.openCustomersTab();
         customers.sortByFirstName();
         customers.compareFirstElInDescendingOrder();
         customers.compareMiddleElInAscendingOrder();
@@ -28,7 +27,7 @@ public class CustomerSortingTests extends WebdriverSetting {
         StartPage startPage = new StartPage(driver);
         Customers customers = new Customers(driver);
 
-        startPage.open(customersTabLink);
+        startPage.openCustomersTab();
         customers.sortByFirstName();
         customers.sortByFirstName();
         customers.compareFirstElInAscendingOrder();

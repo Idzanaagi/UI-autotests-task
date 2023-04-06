@@ -7,7 +7,6 @@ import pages.Customers;
 import pages.StartPage;
 
 public class FindCustomerTests extends WebdriverSetting {
-    private final String customersTabLink = "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list";
 
     @Test
     @DisplayName("FC-1, find by first name")
@@ -15,7 +14,7 @@ public class FindCustomerTests extends WebdriverSetting {
         StartPage startPage = new StartPage(driver);
         Customers customers = new Customers(driver);
 
-        startPage.open(customersTabLink);
+        startPage.openCustomersTab();
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerFieldForFirstNameCheck();
         customers.getCountEl(1);
@@ -27,7 +26,7 @@ public class FindCustomerTests extends WebdriverSetting {
         StartPage startPage = new StartPage(driver);
         Customers customers = new Customers(driver);
 
-        startPage.open(customersTabLink);
+        startPage.openCustomersTab();
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerFieldForLastNameCheck();
         customers.getCountEl(1);
@@ -39,7 +38,7 @@ public class FindCustomerTests extends WebdriverSetting {
         StartPage startPage = new StartPage(driver);
         Customers customers = new Customers(driver);
 
-        startPage.open(customersTabLink);
+        startPage.openCustomersTab();
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerFieldForPostCode();
         customers.getCountEl(1);
@@ -51,7 +50,7 @@ public class FindCustomerTests extends WebdriverSetting {
         StartPage startPage = new StartPage(driver);
         Customers customers = new Customers(driver);
 
-        startPage.open(customersTabLink);
+        startPage.openCustomersTab();
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerFieldForAccountNumber();
         customers.getCountEl(1);
@@ -63,7 +62,7 @@ public class FindCustomerTests extends WebdriverSetting {
         StartPage startPage = new StartPage(driver);
         Customers customers = new Customers(driver);
 
-        startPage.open(customersTabLink);
+        startPage.openCustomersTab();
         customers.clickSearchCustomersField();
         customers.findNonExistentCustomer();
         customers.getCountEl(0);
@@ -74,7 +73,7 @@ public class FindCustomerTests extends WebdriverSetting {
         StartPage startPage = new StartPage(driver);
         Customers customers = new Customers(driver);
 
-        startPage.open(customersTabLink);
+        startPage.openCustomersTab();
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerFieldForMultipleSearch();
         customers.getCountEl(2);

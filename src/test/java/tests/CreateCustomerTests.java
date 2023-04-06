@@ -9,9 +9,6 @@ import pages.StartPage;
 import pages.OpenAccount;
 
 public class CreateCustomerTests extends WebdriverSetting {
-    private final String addCustomerTabLink = "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/addCust";
-    private final String customersTabLink = "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list";
-    private final String openAccountTabLink = "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/openAccount";
 
     @Test
     @DisplayName("CC-1, content of modal msg")
@@ -19,7 +16,7 @@ public class CreateCustomerTests extends WebdriverSetting {
         StartPage startPage = new StartPage(driver);
         AddCust addCust = new AddCust(driver);
 
-        startPage.open(addCustomerTabLink);
+        startPage.openAddCustomerTab();
         addCust.fillFirstName();
         addCust.fillLastName();
         addCust.fillPostCode();
@@ -32,7 +29,7 @@ public class CreateCustomerTests extends WebdriverSetting {
         StartPage startPage = new StartPage(driver);
         AddCust addCust = new AddCust(driver);
 
-        startPage.open(addCustomerTabLink);
+        startPage.openAddCustomerTab();
         addCust.fillFirstName();
         addCust.fillLastName();
         addCust.fillPostCode();
@@ -40,7 +37,7 @@ public class CreateCustomerTests extends WebdriverSetting {
         addCust.getAlertMessage();
         addCust.confirmAction();
         addCust.isFieldEmpty(); /* проверка, что поля формы очищаются после успешного добавления клиента */
-        startPage.open(customersTabLink);
+        startPage.openCustomersTab();
         addCust.compareFirstNameValues();
         addCust.compareLastNameValues();
         addCust.comparePostCodeValues();
@@ -53,14 +50,14 @@ public class CreateCustomerTests extends WebdriverSetting {
         AddCust addCust = new AddCust(driver);
         OpenAccount openAccount = new OpenAccount(driver);
 
-        startPage.open(addCustomerTabLink);
+        startPage.openAddCustomerTab();
         addCust.fillFirstName();
         addCust.fillLastName();
         addCust.fillPostCode();
         addCust.clickAddCustomerBtn();
         addCust.getAlertMessage();
         addCust.confirmAction();
-        startPage.open(openAccountTabLink);
+        startPage.openAccountTab();
         openAccount.clickCustomerSelect();
         openAccount.checkNewSelectOption();
     }
@@ -70,7 +67,7 @@ public class CreateCustomerTests extends WebdriverSetting {
         StartPage startPage = new StartPage(driver);
         AddCust addCust = new AddCust(driver);
 
-        startPage.open(addCustomerTabLink);
+        startPage.openAddCustomerTab();
         addCust.clickAddCustomerBtn();
         addCust.checkFirstNameFieldFocus();
     }
@@ -80,7 +77,7 @@ public class CreateCustomerTests extends WebdriverSetting {
         StartPage startPage = new StartPage(driver);
         AddCust addCust = new AddCust(driver);
 
-        startPage.open(addCustomerTabLink);
+        startPage.openAddCustomerTab();
         addCust.fillFirstName();
         addCust.clickAddCustomerBtn();
         addCust.checkLastNameFieldFocus();
