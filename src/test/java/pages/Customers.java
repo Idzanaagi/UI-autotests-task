@@ -46,20 +46,14 @@ public class Customers {
     public void sortByFirstName() {
         firstNameCeil.click();
     }
-    public void compareFirstElInDescendingOrder() {
-        Assertions.assertEquals(firstElementInTableColumn.getText(), "Ron");
+    public String getFirstElementInTableColumnValue() {
+        return firstElementInTableColumn.getText();
     }
-    public void compareLastElInDescendingOrder() {
-        Assertions.assertEquals(lastElementInFirstNameColumn.getText(), "Albus");
+    public String getMiddleElementInTableColumnValue() {
+        return middleElementInFirstNameColumn.getText();
     }
-    public void compareFirstElInAscendingOrder() {
-        Assertions.assertEquals(firstElementInTableColumn.getText(), "Albus");
-    }
-    public void compareMiddleElInAscendingOrder() {
-        Assertions.assertEquals(middleElementInFirstNameColumn.getText(), "Hermoine");
-    }
-    public void compareLastElInAscendingOrder() {
-        Assertions.assertEquals(lastElementInFirstNameColumn.getText(), "Ron");
+    public String getLastElementInTableColumnValue() {
+        return lastElementInFirstNameColumn.getText();
     }
     public void clickSearchCustomersField() {
         searchCustomersField.click();
@@ -67,30 +61,14 @@ public class Customers {
     public void fillSearchCustomerFieldForFirstNameCheck() {
         searchCustomersField.sendKeys("ha");
     }
-    public void compareFirstNameValue() {
-        Assertions.assertEquals(firstnameValue.getText(), "Harry");
-        Assertions.assertEquals(postCodeElement.getText(), "E725JB");
-    }
     public void fillSearchCustomerFieldForLastNameCheck() {
         searchCustomersField.sendKeys("lo");
-    }
-    public void compareLastNameValue() {
-        Assertions.assertEquals(firstnameValue.getText(), "Neville");
-        Assertions.assertEquals(lastnameValue.getText(), "Longbottom");
     }
     public void fillSearchCustomerFieldForPostCode() {
         searchCustomersField.sendKeys("e7");
     }
-    public void comparePostCodeValue() {
-        Assertions.assertEquals(postCodeElement.getText(),"E725JB");
-        Assertions.assertEquals(firstnameValue.getText(),"Harry");
-    }
     public void fillSearchCustomerFieldForAccountNumber() {
         searchCustomersField.sendKeys("1014");
-    }
-    public void compareAccountNumberValue() {
-        Assertions.assertEquals(accountNumberElement.getText(),"1013 1014 1015");
-        Assertions.assertEquals(lastnameValue.getText(),"Longbottom");
     }
     public void findNonExistentCustomer() {
         searchCustomersField.sendKeys("dd");
@@ -98,11 +76,23 @@ public class Customers {
     public void fillSearchCustomersFieldForMultipleSearch() {
         searchCustomersField.sendKeys("ne");
     }
-    public void compareMultipleSearchValues() {
-        Assertions.assertEquals(firstnameValue.getText(),"Hermoine");
-        Assertions.assertEquals(lastnameValue.getText(),"Granger");
-        Assertions.assertEquals(firstnameEl_col2.getText(),"Neville");
-        Assertions.assertEquals(lastnameEl_col2.getText(),"Longbottom");
+    public String getFirstNameWithFilter() {
+        return firstnameValue.getText();
+    }
+    public String getLastNameWithFilter() {
+        return lastnameValue.getText();
+    }
+    public String getPostCodeWithFilter() {
+        return postCodeElement.getText();
+    }
+    public String getAccountNumberWithFilter() {
+        return accountNumberElement.getText();
+    }
+    public String getFirstNameOnLine2() {
+        return firstnameEl_col2.getText();
+    }
+    public String getLastNameOnLine2() {
+       return lastnameEl_col2.getText();
     }
     public void getNumberOfItemsInCusrtomerTable(int num) {
         Assertions.assertEquals(allElementsInList.size() - 1, num);

@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -18,9 +19,9 @@ public class CustomerSortingTests extends WebdriverSetting {
 
         startPage.openCustomersTab();
         customers.sortByFirstName();
-        customers.compareFirstElInDescendingOrder();
-        customers.compareMiddleElInAscendingOrder();
-        customers.compareLastElInDescendingOrder();
+        Assertions.assertEquals(customers.getFirstElementInTableColumnValue(), "Ron");
+        Assertions.assertEquals(customers.getMiddleElementInTableColumnValue(), "Hermoine");
+        Assertions.assertEquals(customers.getLastElementInTableColumnValue(), "Albus");
     }
 
     @Test
@@ -33,8 +34,8 @@ public class CustomerSortingTests extends WebdriverSetting {
         startPage.openCustomersTab();
         customers.sortByFirstName();
         customers.sortByFirstName();
-        customers.compareFirstElInAscendingOrder();
-        customers.compareMiddleElInAscendingOrder();
-        customers.compareLastElInAscendingOrder();
+        Assertions.assertEquals(customers.getFirstElementInTableColumnValue(), "Albus");
+        Assertions.assertEquals(customers.getMiddleElementInTableColumnValue(), "Hermoine");
+        Assertions.assertEquals(customers.getLastElementInTableColumnValue(), "Ron");
     }
 }

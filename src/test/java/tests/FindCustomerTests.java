@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -20,7 +21,8 @@ public class FindCustomerTests extends WebdriverSetting {
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerFieldForFirstNameCheck();
         customers.getNumberOfItemsInCusrtomerTable(1);
-        customers.compareFirstNameValue();
+        Assertions.assertEquals(customers.getFirstNameWithFilter(), "Harry");
+        Assertions.assertEquals(customers.getPostCodeWithFilter(), "E725JB");
     }
 
     @Test
@@ -34,7 +36,8 @@ public class FindCustomerTests extends WebdriverSetting {
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerFieldForLastNameCheck();
         customers.getNumberOfItemsInCusrtomerTable(1);
-        customers.compareLastNameValue();
+        Assertions.assertEquals(customers.getFirstNameWithFilter(), "Neville");
+        Assertions.assertEquals(customers.getLastNameWithFilter(), "Longbottom");
     }
 
     @Test
@@ -48,7 +51,8 @@ public class FindCustomerTests extends WebdriverSetting {
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerFieldForPostCode();
         customers.getNumberOfItemsInCusrtomerTable(1);
-        customers.comparePostCodeValue();
+        Assertions.assertEquals(customers.getPostCodeWithFilter(), "E725JB");
+        Assertions.assertEquals(customers.getFirstNameWithFilter(), "Harry");
     }
 
     @Test
@@ -62,7 +66,8 @@ public class FindCustomerTests extends WebdriverSetting {
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerFieldForAccountNumber();
         customers.getNumberOfItemsInCusrtomerTable(1);
-        customers.compareAccountNumberValue();
+        Assertions.assertEquals(customers.getAccountNumberWithFilter(), "1013 1014 1015");
+        Assertions.assertEquals(customers.getLastNameWithFilter(), "Longbottom");
     }
 
     @Test
@@ -89,6 +94,9 @@ public class FindCustomerTests extends WebdriverSetting {
         customers.clickSearchCustomersField();
         customers.fillSearchCustomersFieldForMultipleSearch();
         customers.getNumberOfItemsInCusrtomerTable(2);
-        customers.compareMultipleSearchValues();
+        Assertions.assertEquals(customers.getFirstElementInTableColumnValue(), "Hermoine");
+        Assertions.assertEquals(customers.getLastNameWithFilter(), "Granger");
+        Assertions.assertEquals(customers.getFirstNameOnLine2(), "Neville");
+        Assertions.assertEquals(customers.getLastNameOnLine2(), "Longbottom");
     }
 }
