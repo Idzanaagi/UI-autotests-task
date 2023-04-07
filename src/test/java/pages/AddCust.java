@@ -52,14 +52,14 @@ public class AddCust extends TestData {
     public boolean isFieldsEmpty() {
         return firstNameField.getText().isEmpty() && lastNameField.getText().isEmpty() && postCodeField.getText().isEmpty();
     }
-    public void compareFirstNameValue(String value) {
-    Assertions.assertEquals(newCellWithFirstName.getText(), value);
-}
-    public void compareLastNameValue(String value) {
-        Assertions.assertEquals(newCellWithLastName.getText(), value);
+    public String getNewCeilWithFirstNameValue() {
+        return newCellWithFirstName.getText();
     }
-    public void comparePostCodeValue(String value) {
-        Assertions.assertEquals(newCellWithPostCode.getText(), value);
+    public String getNewCeilWithLastName() {
+        return newCellWithLastName.getText();
+    }
+    public String getNewCeilWithPostCode() {
+        return newCellWithPostCode.getText();
     }
     public void compareAccountNumberValue(String value) {
         Assertions.assertEquals(newCellWithAccountNumber.getText(), value);
