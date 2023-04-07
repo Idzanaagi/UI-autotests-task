@@ -51,7 +51,7 @@ public class CreateCustomerTests extends WebdriverSetting {
         Assertions.assertEquals(addCust.getNewCeilWithFirstNameValue(), firstNameData);
         Assertions.assertEquals(addCust.getNewCeilWithLastName(), lastNameData);
         Assertions.assertEquals(addCust.getNewCeilWithPostCode(), postCodeData);
-        addCust.compareAccountNumberValue("");
+        Assertions.assertEquals(addCust.getNewCeilWithAccountNumber(), "");
     }
 
     @Test

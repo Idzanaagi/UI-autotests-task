@@ -61,7 +61,7 @@ public class AddCust extends TestData {
     public String getNewCeilWithPostCode() {
         return newCellWithPostCode.getText();
     }
-    public void compareAccountNumberValue(String value) {
-        Assertions.assertEquals(newCellWithAccountNumber.getText(), value);
+    public String getNewCeilWithAccountNumber() {
+        return newCellWithAccountNumber.getText();
     }
 }
