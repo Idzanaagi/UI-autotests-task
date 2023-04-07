@@ -10,7 +10,9 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class Customers {
+
     WebDriver driver;
+
     public Customers(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -93,10 +95,10 @@ public class Customers {
     public void findNonExistentCustomer() {
         searchCustomersField.sendKeys("dd");
     }
-    public void fillSearchCustomerFieldForMultipleSearch() {
+    public void fillSearchCustomersFieldForMultipleSearch() {
         searchCustomersField.sendKeys("ne");
     }
-    public void compareMultipleSearchValue() {
+    public void compareMultipleSearchValues() {
         Assertions.assertEquals(firstnameValue.getText(),"Hermoine");
         Assertions.assertEquals(lastnameValue.getText(),"Granger");
         Assertions.assertEquals(firstnameEl_col2.getText(),"Neville");

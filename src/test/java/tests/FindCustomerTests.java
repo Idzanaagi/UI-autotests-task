@@ -75,8 +75,8 @@ public class FindCustomerTests extends WebdriverSetting {
 
         startPage.openCustomersTab();
         customers.clickSearchCustomersField();
-        customers.fillSearchCustomerFieldForMultipleSearch();
+        customers.fillSearchCustomersFieldForMultipleSearch();
         customers.getCountEl(2);
-        customers.compareMultipleSearchValue();
+        customers.compareMultipleSearchValues();
     }
 }

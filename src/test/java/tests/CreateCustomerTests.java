@@ -43,12 +43,12 @@ public class CreateCustomerTests extends WebdriverSetting {
         addCust.clickAddCustomerBtn();
         Assertions.assertEquals(expectedAlertMessage, driver.switchTo().alert().getText());
         addCust.confirmAction();
-        addCust.isFieldEmpty(); /* проверка, что поля формы очищаются после успешного добавления клиента */
+        addCust.isFieldsEmpty(); /* проверка, что поля формы очищаются после успешного добавления клиента */
         startPage.openCustomersTab();
-        addCust.compareFirstNameValues(firstNameData);
-        addCust.compareLastNameValues(lastNameData);
-        addCust.comparePostCodeValues(postCodeData);
-        addCust.compareAccountNumberValues("");
+        addCust.compareFirstNameValue(firstNameData);
+        addCust.compareLastNameValue(lastNameData);
+        addCust.comparePostCodeValue(postCodeData);
+        addCust.compareAccountNumberValue("");
     }
 
     @Test
@@ -67,7 +67,7 @@ public class CreateCustomerTests extends WebdriverSetting {
 
         addCust.confirmAction();
         startPage.openAccountTab();
-        openAccount.clickCustomerSelect();
+        openAccount.clickCustomersListSelect();
         openAccount.checkNewSelectOption();
     }
 

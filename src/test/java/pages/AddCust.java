@@ -49,19 +49,19 @@ public class AddCust extends TestData {
     public void confirmAction() {
         driver.switchTo().alert().accept();
     }
-    public boolean isFieldEmpty() {
+    public boolean isFieldsEmpty() {
         return firstNameField.getText().isEmpty() && lastNameField.getText().isEmpty() && postCodeField.getText().isEmpty();
     }
-    public void compareFirstNameValues(String value) {
+    public void compareFirstNameValue(String value) {
     Assertions.assertEquals(newCellWithFirstName.getText(), value);
 }
-    public void compareLastNameValues(String value) {
+    public void compareLastNameValue(String value) {
         Assertions.assertEquals(newCellWithLastName.getText(), value);
     }
-    public void comparePostCodeValues(String value) {
+    public void comparePostCodeValue(String value) {
         Assertions.assertEquals(newCellWithPostCode.getText(), value);
     }
-    public void compareAccountNumberValues(String value) {
+    public void compareAccountNumberValue(String value) {
         Assertions.assertEquals(newCellWithAccountNumber.getText(), value);
     }
 
