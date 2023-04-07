@@ -54,8 +54,8 @@ public class FindCustomerTests extends WebdriverSetting {
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerField("e7");
         Assertions.assertEquals(customers.getSizeAllElementsInCustomerTable(), 1);
-        Assertions.assertEquals(customers.getPostCodeWithFilter(), "E725JB");
         Assertions.assertEquals(customers.getFirstNameWithFilter(), testData.harryName);
+        Assertions.assertEquals(customers.getPostCodeWithFilter(), "E725JB");
     }
 
     @Test
@@ -67,10 +67,10 @@ public class FindCustomerTests extends WebdriverSetting {
 
         startPage.openCustomersTab();
         customers.clickSearchCustomersField();
-        customers.fillSearchCustomerField("1014");
+        customers.fillSearchCustomerField("1013");
         Assertions.assertEquals(customers.getSizeAllElementsInCustomerTable(), 1);
-        Assertions.assertEquals(customers.getAccountNumberWithFilter(), "1013 1014 1015");
         Assertions.assertEquals(customers.getLastNameWithFilter(), testData.newvilleLastName);
+        Assertions.assertEquals(customers.getAccountNumberWithFilter(), "1013 1014 1015");
     }
 
     @Test
