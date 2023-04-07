@@ -67,7 +67,6 @@ public class CreateCustomerTests extends WebdriverSetting {
         addCust.fillPostCode(postCodeData);
         addCust.clickAddCustomerBtn();
         Assertions.assertEquals(expectedAlertMessage, driver.switchTo().alert().getText());
-
         addCust.confirmAction();
         startPage.openAccountTab();
         openAccount.clickCustomersListSelect();

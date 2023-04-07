@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import pages.Customers;
 import pages.StartPage;
 import utils.WebdriverSetting;
-
 import utils.TestData;
 
 public class CustomerSortingTests extends WebdriverSetting {

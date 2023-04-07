@@ -22,6 +22,7 @@ public class WebdriverSetting {
         System.setProperty("webdriver.chrome.driver", Objects.requireNonNull(getClass().getClassLoader().getResource("drivers/chromedriver.exe")).getFile());
         WebDriver.Timeouts timeouts = driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
+
     @AfterEach
     public void close() { driver.quit(); }
 }
