@@ -104,7 +104,7 @@ public class Customers {
         Assertions.assertEquals(firstnameEl_col2.getText(),"Neville");
         Assertions.assertEquals(lastnameEl_col2.getText(),"Longbottom");
     }
-    public void getCountEl(int num) {
+    public void getNumberOfItemsInCusrtomerTable(int num) {
         Assertions.assertEquals(allElementsInList.size() - 1, num);
     }
 }

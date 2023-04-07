@@ -19,7 +19,7 @@ public class FindCustomerTests extends WebdriverSetting {
         startPage.openCustomersTab();
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerFieldForFirstNameCheck();
-        customers.getCountEl(1);
+        customers.getNumberOfItemsInCusrtomerTable(1);
         customers.compareFirstNameValue();
     }
 
@@ -33,7 +33,7 @@ public class FindCustomerTests extends WebdriverSetting {
         startPage.openCustomersTab();
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerFieldForLastNameCheck();
-        customers.getCountEl(1);
+        customers.getNumberOfItemsInCusrtomerTable(1);
         customers.compareLastNameValue();
     }
 
@@ -47,7 +47,7 @@ public class FindCustomerTests extends WebdriverSetting {
         startPage.openCustomersTab();
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerFieldForPostCode();
-        customers.getCountEl(1);
+        customers.getNumberOfItemsInCusrtomerTable(1);
         customers.comparePostCodeValue();
     }
 
@@ -61,7 +61,7 @@ public class FindCustomerTests extends WebdriverSetting {
         startPage.openCustomersTab();
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerFieldForAccountNumber();
-        customers.getCountEl(1);
+        customers.getNumberOfItemsInCusrtomerTable(1);
         customers.compareAccountNumberValue();
     }
 
@@ -75,7 +75,7 @@ public class FindCustomerTests extends WebdriverSetting {
         startPage.openCustomersTab();
         customers.clickSearchCustomersField();
         customers.findNonExistentCustomer();
-        customers.getCountEl(0);
+        customers.getNumberOfItemsInCusrtomerTable(0);
     }
 
     @Test
@@ -88,7 +88,7 @@ public class FindCustomerTests extends WebdriverSetting {
         startPage.openCustomersTab();
         customers.clickSearchCustomersField();
         customers.fillSearchCustomersFieldForMultipleSearch();
-        customers.getCountEl(2);
+        customers.getNumberOfItemsInCusrtomerTable(2);
         customers.compareMultipleSearchValues();
     }
 }
