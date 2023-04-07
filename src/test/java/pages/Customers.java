@@ -1,6 +1,5 @@
 package pages;
 
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -58,23 +57,23 @@ public class Customers {
     public void clickSearchCustomersField() {
         searchCustomersField.click();
     }
-    public void fillSearchCustomerFieldForFirstNameCheck() {
-        searchCustomersField.sendKeys("ha");
+    public void fillSearchCustomerFieldForFirstNameCheck(String value) {
+        searchCustomersField.sendKeys(value);
     }
-    public void fillSearchCustomerFieldForLastNameCheck() {
-        searchCustomersField.sendKeys("lo");
+    public void fillSearchCustomerFieldForLastNameCheck(String value) {
+        searchCustomersField.sendKeys(value);
     }
-    public void fillSearchCustomerFieldForPostCode() {
-        searchCustomersField.sendKeys("e7");
+    public void fillSearchCustomerFieldForPostCode(String value) {
+        searchCustomersField.sendKeys(value);
     }
-    public void fillSearchCustomerFieldForAccountNumber() {
-        searchCustomersField.sendKeys("1014");
+    public void fillSearchCustomerFieldForAccountNumber(String value) {
+        searchCustomersField.sendKeys(value);
     }
-    public void findNonExistentCustomer() {
-        searchCustomersField.sendKeys("dd");
+    public void findNonExistentCustomer(String value) {
+        searchCustomersField.sendKeys(value);
     }
-    public void fillSearchCustomersFieldForMultipleSearch() {
-        searchCustomersField.sendKeys("ne");
+    public void fillSearchCustomersFieldForMultipleSearch(String value) {
+        searchCustomersField.sendKeys(value);
     }
     public String getFirstNameWithFilter() {
         return firstnameValue.getText();

@@ -8,7 +8,11 @@ import pages.Customers;
 import pages.StartPage;
 import utils.WebdriverSetting;
 
+import utils.TestData;
+
 public class CustomerSortingTests extends WebdriverSetting {
+
+    TestData testData = new TestData();
 
     @Test
     @DisplayName("CS-1, sort in descending order")
@@ -19,9 +23,9 @@ public class CustomerSortingTests extends WebdriverSetting {
 
         startPage.openCustomersTab();
         customers.sortByFirstName();
-        Assertions.assertEquals(customers.getFirstElementInTableColumnValue(), "Ron");
-        Assertions.assertEquals(customers.getMiddleElementInTableColumnValue(), "Hermoine");
-        Assertions.assertEquals(customers.getLastElementInTableColumnValue(), "Albus");
+        Assertions.assertEquals(customers.getFirstElementInTableColumnValue(), testData.ronName);
+        Assertions.assertEquals(customers.getMiddleElementInTableColumnValue(), testData.hermoineName);
+        Assertions.assertEquals(customers.getLastElementInTableColumnValue(), testData.albusName);
     }
 
     @Test
@@ -34,8 +38,8 @@ public class CustomerSortingTests extends WebdriverSetting {
         startPage.openCustomersTab();
         customers.sortByFirstName();
         customers.sortByFirstName();
-        Assertions.assertEquals(customers.getFirstElementInTableColumnValue(), "Albus");
-        Assertions.assertEquals(customers.getMiddleElementInTableColumnValue(), "Hermoine");
-        Assertions.assertEquals(customers.getLastElementInTableColumnValue(), "Ron");
+        Assertions.assertEquals(customers.getFirstElementInTableColumnValue(), testData.albusName);
+        Assertions.assertEquals(customers.getMiddleElementInTableColumnValue(), testData.hermoineName);
+        Assertions.assertEquals(customers.getLastElementInTableColumnValue(), testData.ronName);
     }
 }
