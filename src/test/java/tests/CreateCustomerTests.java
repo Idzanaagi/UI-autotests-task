@@ -48,9 +48,9 @@ public class CreateCustomerTests extends WebdriverSetting {
         addCust.isFieldsEmpty(); /* проверка, что поля формы очищаются после успешного добавления клиента */
         startPage.openCustomersTab();
         Assertions.assertEquals(addCust.getNewCeilWithFirstNameValue(), firstNameData);
-        Assertions.assertEquals(addCust.getNewCeilWithLastName(), lastNameData);
-        Assertions.assertEquals(addCust.getNewCeilWithPostCode(), postCodeData);
-        Assertions.assertEquals(addCust.getNewCeilWithAccountNumber(), "");
+        Assertions.assertEquals(addCust.getNewCeilWithLastNameValue(), lastNameData);
+        Assertions.assertEquals(addCust.getNewCeilWithPostCodeValue(), postCodeData);
+        Assertions.assertEquals(addCust.getNewCeilWithAccountNumberValue(), "");
     }
 
     @Test
