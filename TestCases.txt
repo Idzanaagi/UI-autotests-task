@@ -7,7 +7,7 @@ id: CreateCustomer-1 (CC-1)
 - заполнить поле Last Name значением testlastname
 - заполнить поле Post Code значением testpostcode
 - нажать кнопку Add Customer
-Ожидаемый результат
+Ожидаемый результат:
 - появляется модальное окно, содержащее текст “Customer added successfully with customer id 6”
 
 id: CreateCustomer-2 (CC-2)
@@ -42,12 +42,12 @@ id: CreateCustomer-4 (CC-4)
 id: CreateCustomer-5 (CC-5)
 Заголовок: Проверить добавление покупателя с частично отсутствующими данными
 Шаги:
-открыть браузер
+- открыть браузер
 - перейти на страницу https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/addCust
 - заполнить поле First Name значением testfirstname
 - кликнуть на кнопку add customer
 Ожидаемый результат: 
-- в поле post code появляется автофокус
+- в поле last name появляется автофокус
 
 id: CustomerSorting-1 (CS-1)
 Заголовок: проверить сортировку клиентов по First Name в порядке убывания
@@ -117,11 +117,11 @@ id:FindCustomer-5 (FC-5)
 
 id:FindCustomer-6 (FC-6)
 Заголовок: проверить поиск нескольких клиентов
-Шаги: 
+Шаги:
 - открыть браузер
 - перейти на странцу клиентов https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list
 - заполнить поле Search Customer значением “ne”
 Ожидаемый результат:
 - отображается только две строки таблицы
-- значения первой строки: First Name - Neville, Last Name - Longbottom (другие значения проверять не нужно)
- -значения второй строки: First Name - Hermoineб Last Name - Granger (другие значения проверять не нужно)
+- значения первой строки: First Name - Hermoine, Last Name - Granger (другие значения проверять не нужно)
+- значения второй строки: First Name - Neville, Last Name - Longbottom (другие значения проверять не нужно)
