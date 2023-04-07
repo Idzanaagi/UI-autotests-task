@@ -64,5 +64,4 @@ public class AddCust extends TestData {
     public void compareAccountNumberValue(String value) {
         Assertions.assertEquals(newCellWithAccountNumber.getText(), value);
     }
-
 }

@@ -15,8 +15,6 @@ public class OpenAccount {
         PageFactory.initElements(driver, this);
     }
 
-
-
     @FindBy(xpath = "//*[@id=\"userSelect\"]")
     private WebElement customersListSelect;
     @FindBy(xpath = "//*[@id=\"userSelect\"]/option[7]")

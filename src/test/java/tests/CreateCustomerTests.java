@@ -1,13 +1,13 @@
 package tests;
 
 import org.junit.jupiter.api.Assertions;
-import utils.WebdriverSetting;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.support.PageFactory;
+
 import pages.AddCust;
 import pages.StartPage;
 import pages.OpenAccount;
+import utils.WebdriverSetting;
 
 public class CreateCustomerTests extends WebdriverSetting {
 
@@ -20,6 +20,7 @@ public class CreateCustomerTests extends WebdriverSetting {
     @Test
     @DisplayName("CC-1, content of modal msg")
     public void checkContentModalMsg() {
+
         StartPage startPage = new StartPage(driver);
         AddCust addCust = new AddCust(driver);
 
@@ -34,6 +35,7 @@ public class CreateCustomerTests extends WebdriverSetting {
     @Test
     @DisplayName("CC-2, add customer to customer page")
     public void checkAddCustomerToCustomerPage() {
+
         StartPage startPage = new StartPage(driver);
         AddCust addCust = new AddCust(driver);
 
@@ -55,6 +57,7 @@ public class CreateCustomerTests extends WebdriverSetting {
     @Test
     @DisplayName("CC-3, add customer to open account page")
     public void checkAddCustomerToOpenAccountPage() {
+
         StartPage startPage = new StartPage(driver);
         AddCust addCust = new AddCust(driver);
         OpenAccount openAccount = new OpenAccount(driver);
@@ -75,6 +78,7 @@ public class CreateCustomerTests extends WebdriverSetting {
     @Test
     @DisplayName("CC-4, try add customer with empty data")
     public void checkAddCustomerWithAllEmptyData() {
+
         StartPage startPage = new StartPage(driver);
         AddCust addCust = new AddCust(driver);
 
@@ -86,6 +90,7 @@ public class CreateCustomerTests extends WebdriverSetting {
     @Test
     @DisplayName("CC-5, try add customer with partially blank data")
     public void checkAddCustomerWithPartiallyBlankData() {
+
         StartPage startPage = new StartPage(driver);
         AddCust addCust = new AddCust(driver);
 
@@ -94,5 +99,4 @@ public class CreateCustomerTests extends WebdriverSetting {
         addCust.clickAddCustomerBtn();
         Assertions.assertEquals(driver.switchTo().activeElement(), addCust.lastNameField);
     }
-
 }
