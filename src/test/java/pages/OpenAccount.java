@@ -23,7 +23,7 @@ public class OpenAccount {
     public void clickCustomersListSelect() {
         customersListSelect.click();
     }
-    public void checkNewSelectOption(String value) {
-        Assertions.assertEquals(lastCustomersListOption.getText(), value);
+    public String getLastCustomerListOptionValue() {
+        return lastCustomersListOption.getText();
     }
 }

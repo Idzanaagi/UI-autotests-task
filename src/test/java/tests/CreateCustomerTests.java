@@ -72,7 +72,7 @@ public class CreateCustomerTests extends WebdriverSetting {
         addCust.confirmAction();
         startPage.openAccountTab();
         openAccount.clickCustomersListSelect();
-        openAccount.checkNewSelectOption(expectedValue);
+        Assertions.assertEquals(openAccount.getLastCustomerListOptionValue(), expectedValue);
     }
 
     @Test
