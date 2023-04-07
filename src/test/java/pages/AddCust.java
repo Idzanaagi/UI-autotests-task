@@ -6,23 +6,21 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AddCust {
+import utils.TestData;
+
+public class AddCust extends TestData {
+
     WebDriver driver;
+
     public AddCust(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    private final String firstNameData = "testfirstname";
-    private final String lastNameData = "testlastname";
-    private final String postCodeData = "testpostcode";
-    private final String emptyValue = "";
-    private final String expectedAlertMessage = "Customer added successfully with customer id :6";
-
     @FindBy(xpath = "//form[@name='myForm']/div[@class='form-group']/input")
-    private WebElement firstNameField;
+    public WebElement firstNameField;
     @FindBy(xpath = "//form[@name='myForm']/div[@class='form-group'][2]/input")
-    private WebElement lastNameField;
+    public WebElement lastNameField;
     @FindBy(xpath = "//form[@name='myForm']/div[@class='form-group'][3]/input")
     private WebElement postCodeField;
     @FindBy(xpath = "//form[@name='myForm']/div[@class='form-group'][3]/following-sibling::button[@type='submit']")
@@ -48,31 +46,23 @@ public class AddCust {
     public void clickAddCustomerBtn() {
         addCustomerBtn.click();
     }
-    public void getAlertMessage() {
-        Assertions.assertEquals(expectedAlertMessage, driver.switchTo().alert().getText());
-    }
     public void confirmAction() {
         driver.switchTo().alert().accept();
     }
     public boolean isFieldEmpty() {
         return firstNameField.getText().isEmpty() && lastNameField.getText().isEmpty() && postCodeField.getText().isEmpty();
     }
-    public void compareFirstNameValues() {
-    Assertions.assertEquals(newCellWithFirstName.getText(), firstNameData);
+    public void compareFirstNameValues(String value) {
+    Assertions.assertEquals(newCellWithFirstName.getText(), value);
 }
-    public void compareLastNameValues() {
-        Assertions.assertEquals(newCellWithLastName.getText(), lastNameData);
+    public void compareLastNameValues(String value) {
+        Assertions.assertEquals(newCellWithLastName.getText(), value);
     }
-    public void comparePostCodeValues() {
-        Assertions.assertEquals(newCellWithPostCode.getText(), postCodeData);
+    public void comparePostCodeValues(String value) {
+        Assertions.assertEquals(newCellWithPostCode.getText(), value);
     }
-    public void compareAccountNumberValues() {
-        Assertions.assertEquals(newCellWithAccountNumber.getText(), emptyValue);
+    public void compareAccountNumberValues(String value) {
+        Assertions.assertEquals(newCellWithAccountNumber.getText(), value);
     }
-    public void checkFirstNameFieldFocus() {
-        Assertions.assertEquals(driver.switchTo().activeElement(), firstNameField);
-    }
-    public void checkLastNameFieldFocus() {
-        Assertions.assertEquals(driver.switchTo().activeElement(), lastNameField);
-    }
+
 }
