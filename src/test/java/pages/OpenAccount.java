@@ -15,7 +15,7 @@ public class OpenAccount {
         PageFactory.initElements(driver, this);
     }
 
-    private final String expectedValue = "testfirstname testlastname";
+
 
     @FindBy(xpath = "//*[@id=\"userSelect\"]")
     private WebElement customersListSelect;
@@ -25,7 +25,7 @@ public class OpenAccount {
     public void clickCustomersListSelect() {
         customersListSelect.click();
     }
-    public void checkNewSelectOption() {
-        Assertions.assertEquals(lastCustomersListOption.getText(), expectedValue);
+    public void checkNewSelectOption(String value) {
+        Assertions.assertEquals(lastCustomersListOption.getText(), value);
     }
 }

@@ -15,6 +15,7 @@ public class CreateCustomerTests extends WebdriverSetting {
     private final String lastNameData = "testlastname";
     private final String postCodeData = "testpostcode";
     private final String expectedAlertMessage = "Customer added successfully with customer id :6";
+    private final String expectedValue = "testfirstname testlastname";
 
     @Test
     @DisplayName("CC-1, content of modal msg")
@@ -68,7 +69,7 @@ public class CreateCustomerTests extends WebdriverSetting {
         addCust.confirmAction();
         startPage.openAccountTab();
         openAccount.clickCustomersListSelect();
-        openAccount.checkNewSelectOption();
+        openAccount.checkNewSelectOption(expectedValue);
     }
 
     @Test
