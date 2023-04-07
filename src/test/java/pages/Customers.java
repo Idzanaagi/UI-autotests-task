@@ -57,24 +57,7 @@ public class Customers {
     public void clickSearchCustomersField() {
         searchCustomersField.click();
     }
-    public void fillSearchCustomerFieldForFirstNameCheck(String value) {
-        searchCustomersField.sendKeys(value);
-    }
-    public void fillSearchCustomerFieldForLastNameCheck(String value) {
-        searchCustomersField.sendKeys(value);
-    }
-    public void fillSearchCustomerFieldForPostCode(String value) {
-        searchCustomersField.sendKeys(value);
-    }
-    public void fillSearchCustomerFieldForAccountNumber(String value) {
-        searchCustomersField.sendKeys(value);
-    }
-    public void findNonExistentCustomer(String value) {
-        searchCustomersField.sendKeys(value);
-    }
-    public void fillSearchCustomersFieldForMultipleSearch(String value) {
-        searchCustomersField.sendKeys(value);
-    }
+    public void fillSearchCustomerField(String value) {searchCustomersField.sendKeys(value); }
     public String getFirstNameWithFilter() {
         return firstnameValue.getText();
     }
