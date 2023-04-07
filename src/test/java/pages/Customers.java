@@ -94,7 +94,7 @@ public class Customers {
     public String getLastNameOnLine2() {
        return lastnameEl_col2.getText();
     }
-    public void getNumberOfItemsInCusrtomerTable(int num) {
-        Assertions.assertEquals(allElementsInList.size() - 1, num);
+    public Integer getSizeAllElementsInCustomerTable() {
+        return allElementsInList.size() - 1;
     }
 }
