@@ -1,6 +1,5 @@
 package pages;
 
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -55,13 +54,13 @@ public class AddCust extends TestData {
     public String getNewCeilWithFirstNameValue() {
         return newCellWithFirstName.getText();
     }
-    public String getNewCeilWithLastName() {
+    public String getNewCeilWithLastNameValue() {
         return newCellWithLastName.getText();
     }
-    public String getNewCeilWithPostCode() {
+    public String getNewCeilWithPostCodeValue() {
         return newCellWithPostCode.getText();
     }
-    public String getNewCeilWithAccountNumber() {
+    public String getNewCeilWithAccountNumberValue() {
         return newCellWithAccountNumber.getText();
     }
 }
