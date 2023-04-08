@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -18,6 +19,7 @@ public class CreateCustomerTests extends WebdriverSetting {
 
     @Test
     @DisplayName("CC-1, content of modal msg")
+    @Description("CC-1, check the text of the message in the modal window")
     public void checkContentModalMsg() {
 
         StartPage startPage = new StartPage(driver);
@@ -33,6 +35,7 @@ public class CreateCustomerTests extends WebdriverSetting {
 
     @Test
     @DisplayName("CC-2, add customer to customer page")
+    @Description("CC-2, check that after adding a new client its data appears in the table customers")
     public void checkAddCustomerToCustomerPage() {
 
         StartPage startPage = new StartPage(driver);
@@ -55,6 +58,7 @@ public class CreateCustomerTests extends WebdriverSetting {
 
     @Test
     @DisplayName("CC-3, add customer to open account page")
+    @Description("CC-3, check that after adding a new client its data appears in the open account")
     public void checkAddCustomerToOpenAccountPage() {
 
         StartPage startPage = new StartPage(driver);
@@ -76,6 +80,7 @@ public class CreateCustomerTests extends WebdriverSetting {
 
     @Test
     @DisplayName("CC-4, try add customer with empty data")
+    @Description("CC-4, check that after adding a customer with unfilled data, the first empty field gets the focus")
     public void checkAddCustomerWithAllEmptyData() {
 
         StartPage startPage = new StartPage(driver);
@@ -88,6 +93,7 @@ public class CreateCustomerTests extends WebdriverSetting {
 
     @Test
     @DisplayName("CC-5, try add customer with partially blank data")
+    @Description("CC-5, check that after adding a customer with partially filled data, the first empty field gets the focus")
     public void checkAddCustomerWithPartiallyBlankData() {
 
         StartPage startPage = new StartPage(driver);
