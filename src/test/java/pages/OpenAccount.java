@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Allure;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,9 +21,11 @@ public class OpenAccount {
     private WebElement lastCustomersListOption;
 
     public void clickCustomersListSelect() {
+        Allure.step("Click on the drop-down list of customers");
         customersListSelect.click();
     }
     public String getLastCustomerListOptionValue() {
+        Allure.step("Get the last value in the drop-down list of customers");
         return lastCustomersListOption.getText();
     }
 }
