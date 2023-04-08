@@ -1,6 +1,7 @@
 package pages;
 
 import io.qameta.allure.Allure;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,44 +35,44 @@ public class AddCust extends TestData {
     @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr[6]/td[4]")
     private WebElement newCellWithAccountNumber;
 
+    @Step("Fill in the first name field")
     public void fillFirstName(String value) {
-        Allure.step("Fill in the first name field");
         firstNameField.sendKeys(value);
     }
+    @Step("Fill in the last name field")
     public void fillLastName(String value) {
-        Allure.step("Fill in the last name field");
         lastNameField.sendKeys(value);
     }
+    @Step("Fill in the post code field")
     public void fillPostCode(String value) {
-        Allure.step("Fill in the post code field");
         postCodeField.sendKeys(value);
     }
+    @Step("Click add customer button")
     public void clickAddCustomerBtn() {
-        Allure.step("Click add customer button");
         addCustomerBtn.click();
     }
+    @Step("Confirm the action in the modal window")
     public void confirmAction() {
-        Allure.step("Confirm the action in the modal window");
         driver.switchTo().alert().accept();
     }
+    @Step("Check that the first name, last name and post code fields are empty")
     public boolean isFieldsEmpty() {
-        Allure.step("Check that the first name, last name and post code fields are empty");
         return firstNameField.getText().isEmpty() && lastNameField.getText().isEmpty() && postCodeField.getText().isEmpty();
     }
+    @Step("Get the value of a new cell with the first name")
     public String getNewCeilWithFirstNameValue() {
-        Allure.step("Get the value of a new cell with the first name");
         return newCellWithFirstName.getText();
     }
+    @Step("Get the value of a new cell with the last name")
     public String getNewCeilWithLastNameValue() {
-        Allure.step("Get the value of a new cell with the last name");
         return newCellWithLastName.getText();
     }
+    @Step("Get the value of a new cell with the post code")
     public String getNewCeilWithPostCodeValue() {
-        Allure.step("Get the value of a new cell with the post code");
         return newCellWithPostCode.getText();
     }
+    @Step("Get the value of a new cell with the account number")
     public String getNewCeilWithAccountNumberValue() {
-        Allure.step("Get the value of a new cell with the account number");
         return newCellWithAccountNumber.getText();
     }
 }

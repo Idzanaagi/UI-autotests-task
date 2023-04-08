@@ -1,6 +1,8 @@
 package pages;
 
 import io.qameta.allure.Allure;
+import io.qameta.allure.Step;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,12 +22,12 @@ public class OpenAccount {
     @FindBy(xpath = "//*[@id=\"userSelect\"]/option[7]")
     private WebElement lastCustomersListOption;
 
+    @Step("Click on the drop-down list of customers")
     public void clickCustomersListSelect() {
-        Allure.step("Click on the drop-down list of customers");
         customersListSelect.click();
     }
+    @Step("Get the last value in the drop-down list of customers")
     public String getLastCustomerListOptionValue() {
-        Allure.step("Get the last value in the drop-down list of customers");
         return lastCustomersListOption.getText();
     }
 }
