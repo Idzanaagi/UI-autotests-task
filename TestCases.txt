@@ -15,6 +15,7 @@ id: CreateCustomer-2 (CC-2)
 Предусловие: выполнить тест CreateCustomer-1
 Шаги:
 - нажать кнопку “Ок” в модальном окне
+- убедиться, что поля first name, last name и post code очистились
 - кликнуть на вкладку Customers
 Ожидаемый результат:
 - в конце таблицы есть строка со следующими значениями: в колонке First Name - testfirstname, в колонке Last Name - testlastname, в колонке Post Code - testpostcode, колонка Account Number  пустая.
