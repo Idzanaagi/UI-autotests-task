@@ -19,7 +19,7 @@ public class CreateCustomerTests extends WebdriverSetting {
 
     @Test
     @DisplayName("CC-1, content of modal msg")
-    @Description("CC-1, check the text of the message in the modal window")
+    @Description("CC-1, check the message text of the modal window when the client was successfully added")
     public void checkContentModalMsg() {
 
         StartPage startPage = new StartPage(driver);
