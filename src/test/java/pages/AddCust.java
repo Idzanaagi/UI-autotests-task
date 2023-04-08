@@ -37,9 +37,9 @@ public class AddCust extends TestData {
     public void fillFirstName(String value) {
         Allure.step("Fill in the first name field");
         firstNameField.sendKeys(value);
-}
+    }
     public void fillLastName(String value) {
-        Allure.step("Fill in the first name field");
+        Allure.step("Fill in the last name field");
         lastNameField.sendKeys(value);
     }
     public void fillPostCode(String value) {
