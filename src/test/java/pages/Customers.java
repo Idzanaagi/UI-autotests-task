@@ -1,5 +1,7 @@
 package pages;
 
+import io.qameta.allure.Allure;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -43,40 +45,55 @@ public class Customers {
     private List<WebElement> allElementsInList;
 
     public void sortByFirstName() {
+        Allure.step("Click on the cell first name");
         firstNameCeil.click();
     }
     public String getFirstElementInTableColumnValue() {
+        Allure.step("Get the value of the first element in the First Name column");
         return firstElementInTableColumn.getText();
     }
     public String getMiddleElementInTableColumnValue() {
+        Allure.step("Get the value of the middle element in the First Name column");
         return middleElementInFirstNameColumn.getText();
     }
     public String getLastElementInTableColumnValue() {
+        Allure.step("Get the value of the last element in the First Name column");
         return lastElementInFirstNameColumn.getText();
     }
     public void clickSearchCustomersField() {
+        Allure.step("Click on the search customer field");
         searchCustomersField.click();
     }
-    public void fillSearchCustomerField(String value) {searchCustomersField.sendKeys(value); }
+    public void fillSearchCustomerField(String value) {
+        Allure.step("Fill in the search customer field");
+        searchCustomersField.sendKeys(value);
+    }
     public String getFirstNameWithFilter() {
+        Allure.step("Get the value of the first name with filtering");
         return firstnameValue.getText();
     }
     public String getLastNameWithFilter() {
+        Allure.step("Get the value of the last name with filtering");
         return lastnameValue.getText();
     }
     public String getPostCodeWithFilter() {
+        Allure.step("Get the value of the post code with filtering");
         return postCodeElement.getText();
     }
     public String getAccountNumberWithFilter() {
+        Allure.step("Get the value of the account number with filtering");
         return accountNumberElement.getText();
     }
     public String getFirstNameOnLine2() {
+        Allure.step("Get the value of the first name on line 2 with filtering");
         return firstnameEl_col2.getText();
     }
     public String getLastNameOnLine2() {
+       Allure.step("Get the value of the last name on line 2 with filtering");
        return lastnameEl_col2.getText();
     }
     public Integer getSizeAllElementsInCustomerTable() {
+        Allure.step("Get the number of rows in the table");
         return allElementsInList.size() - 1;
     }
 }
