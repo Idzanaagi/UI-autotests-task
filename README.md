@@ -2,7 +2,7 @@ UI-autotests-task
 
 Стек: Java 19, maven, junit5, selenium, allure, Jenkins
 
-ОБъект тестирования лежит [здесь](https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager)
+Объект тестирования лежит [здесь](https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager)
 
 Реализованы:
 - [тесты-кейсы](https://github.com/Idzanaagi/UI-autotests-task/blob/main/TestCases.txt) по чек-листу;
