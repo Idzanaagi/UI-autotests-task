@@ -4,15 +4,35 @@ import io.qameta.allure.Description;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 
 import pages.Customers;
 import pages.StartPage;
 import utils.WebdriverSetting;
-import utils.TestData;
 
 public class CustomerSortingTests extends WebdriverSetting {
 
-    TestData testData = new TestData();
+    Properties appProps = new Properties();
+
+    private final String hermoineName;
+    private final String albusName;
+    private final String ronName;
+
+    {
+        try {
+            FileInputStream fis = new FileInputStream("src/test/java/resources/data.properties");
+            appProps.load(fis);
+
+            albusName = appProps.getProperty("albusName");
+            hermoineName = appProps.getProperty("hermoineName");
+            ronName = appProps.getProperty("ronName");
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     @Test
     @DisplayName("CS-1, sort in descending order")
@@ -24,9 +44,9 @@ public class CustomerSortingTests extends WebdriverSetting {
 
         startPage.openCustomersTab();
         customers.sortByFirstName();
-        Assertions.assertEquals(customers.getFirstElementInTableColumnValue(), testData.ronName);
-        Assertions.assertEquals(customers.getMiddleElementInTableColumnValue(), testData.hermoineName);
-        Assertions.assertEquals(customers.getLastElementInTableColumnValue(), testData.albusName);
+        Assertions.assertEquals(customers.getFirstElementInTableColumnValue(), ronName);
+        Assertions.assertEquals(customers.getMiddleElementInTableColumnValue(), hermoineName);
+        Assertions.assertEquals(customers.getLastElementInTableColumnValue(), albusName);
     }
 
     @Test
@@ -40,8 +60,8 @@ public class CustomerSortingTests extends WebdriverSetting {
         startPage.openCustomersTab();
         customers.sortByFirstName();
         customers.sortByFirstName();
-        Assertions.assertEquals(customers.getFirstElementInTableColumnValue(), testData.albusName);
-        Assertions.assertEquals(customers.getMiddleElementInTableColumnValue(), testData.hermoineName);
-        Assertions.assertEquals(customers.getLastElementInTableColumnValue(), testData.ronName);
+        Assertions.assertEquals(customers.getFirstElementInTableColumnValue(), albusName);
+        Assertions.assertEquals(customers.getMiddleElementInTableColumnValue(), hermoineName);
+        Assertions.assertEquals(customers.getLastElementInTableColumnValue(), ronName);
     }
 }

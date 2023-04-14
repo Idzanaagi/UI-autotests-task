@@ -8,11 +8,36 @@ import org.junit.jupiter.api.Test;
 import pages.Customers;
 import pages.StartPage;
 import utils.WebdriverSetting;
-import utils.TestData;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 
 public class FindCustomerTests extends WebdriverSetting {
 
-    TestData testData = new TestData();
+    Properties appProps = new Properties();
+
+    private final String harryName;
+    private final String nevilleName;
+    private final String nevilleLastName;
+    private final String hermoineName;
+    private final String hermoineLastName;
+
+    {
+        try {
+            FileInputStream fis = new FileInputStream("src/test/java/resources/data.properties");
+            appProps.load(fis);
+
+            harryName = appProps.getProperty("harryName");
+            nevilleName = appProps.getProperty("nevilleName");
+            nevilleLastName = appProps.getProperty("nevilleLastName");
+            hermoineName = appProps.getProperty("hermoineName");
+            hermoineLastName = appProps.getProperty("hermoineLastName");
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     @Test
     @DisplayName("FC-1, find by first name")
@@ -26,7 +51,7 @@ public class FindCustomerTests extends WebdriverSetting {
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerField("ha");
         Assertions.assertEquals(customers.getSizeAllElementsInCustomerTable(), 1);
-        Assertions.assertEquals(customers.getFirstNameWithFilter(), testData.harryName);
+        Assertions.assertEquals(customers.getFirstNameWithFilter(), harryName );
         Assertions.assertEquals(customers.getPostCodeWithFilter(), "E725JB");
     }
 
@@ -42,8 +67,8 @@ public class FindCustomerTests extends WebdriverSetting {
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerField("lo");
         Assertions.assertEquals(customers.getSizeAllElementsInCustomerTable(), 1);
-        Assertions.assertEquals(customers.getFirstNameWithFilter(), testData.nevilleName);
-        Assertions.assertEquals(customers.getLastNameWithFilter(), testData.newvilleLastName);
+        Assertions.assertEquals(customers.getFirstNameWithFilter(), nevilleName);
+        Assertions.assertEquals(customers.getLastNameWithFilter(), nevilleLastName);
     }
 
     @Test
@@ -58,7 +83,7 @@ public class FindCustomerTests extends WebdriverSetting {
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerField("e7");
         Assertions.assertEquals(customers.getSizeAllElementsInCustomerTable(), 1);
-        Assertions.assertEquals(customers.getFirstNameWithFilter(), testData.harryName);
+        Assertions.assertEquals(customers.getFirstNameWithFilter(), harryName);
         Assertions.assertEquals(customers.getPostCodeWithFilter(), "E725JB");
     }
 
@@ -74,7 +99,7 @@ public class FindCustomerTests extends WebdriverSetting {
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerField("1013");
         Assertions.assertEquals(customers.getSizeAllElementsInCustomerTable(), 1);
-        Assertions.assertEquals(customers.getLastNameWithFilter(), testData.newvilleLastName);
+        Assertions.assertEquals(customers.getLastNameWithFilter(), nevilleLastName);
         Assertions.assertEquals(customers.getAccountNumberWithFilter(), "1013 1014 1015");
     }
 
@@ -104,9 +129,9 @@ public class FindCustomerTests extends WebdriverSetting {
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerField("ne");
         Assertions.assertEquals(customers.getSizeAllElementsInCustomerTable(), 2);
-        Assertions.assertEquals(customers.getFirstElementInTableColumnValue(), testData.hermoineName);
-        Assertions.assertEquals(customers.getLastNameWithFilter(), testData.hermoineLastName);
-        Assertions.assertEquals(customers.getFirstNameOnLine2(), testData.nevilleName);
-        Assertions.assertEquals(customers.getLastNameOnLine2(), testData.newvilleLastName);
+        Assertions.assertEquals(customers.getFirstElementInTableColumnValue(), hermoineName);
+        Assertions.assertEquals(customers.getLastNameWithFilter(), hermoineLastName);
+        Assertions.assertEquals(customers.getFirstNameOnLine2(), nevilleName);
+        Assertions.assertEquals(customers.getLastNameOnLine2(), nevilleLastName);
     }
 }
