@@ -4,6 +4,8 @@ UI-autotests-task
 
 Объект тестирования лежит [здесь](https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager)
 
+UPD: в ветке add-properties лежит другая реализация проекта: вместо класса для повторяющихся данных используется properties файл
+
 Реализованы:
 - [тесты-кейсы](https://github.com/Idzanaagi/UI-autotests-task/blob/main/TestCases.txt) по чек-листу;
 - [описание страниц](https://github.com/Idzanaagi/UI-autotests-task/tree/main/src/test/java/pages) по Page Object Model;
