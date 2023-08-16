@@ -14,7 +14,7 @@ UI-autotests-task
 
 ![ui-allure](https://user-images.githubusercontent.com/87720620/231713497-8a2fad43-64ef-48a8-bd06-78586a3f7818.png)
 
-Сформировать отчёт allure (powershell):
+Прогнать тесты и сформировать отчёт Allure
 ```
 mvn clean test
 allure generate --clean
