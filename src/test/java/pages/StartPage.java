@@ -3,49 +3,49 @@ package pages;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
 
+import static utils.DataProperties.readProperty;
+
+/**
+ * The type Start page.
+ */
 public class StartPage {
 
+    /**
+     * The Driver.
+     */
     WebDriver driver;
 
-    Properties appProps = new Properties();
-
-    private final String addCustomerTabLink;
-    private final String customersTabLink;
-    private final String openAccountTabLink;
-
-    {
-        try {
-            FileInputStream fis = new FileInputStream("src/test/java/resources/data.properties");
-            appProps.load(fis);
-
-            addCustomerTabLink = appProps.getProperty("addCustomerTabLink");
-            customersTabLink = appProps.getProperty("customersTabLink");
-            openAccountTabLink = appProps.getProperty("openAccountTabLink");
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public StartPage(WebDriver driver) {
+    /**
+     * Instantiates a new Start page.
+     * @param driver the driver
+     */
+    public StartPage(final WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
+    /**
+     * Open add customer tab.
+     */
     @Step("Open the add customers tab")
     public void openAddCustomerTab() {
-        driver.get(addCustomerTabLink);
+        driver.get(readProperty("addCustomerTabLink"));
     }
+
+    /**
+     * Open customers tab.
+     */
     @Step("Open the customers tab")
     public void openCustomersTab() {
-        driver.get(customersTabLink);
+        driver.get(readProperty("customersTabLink"));
     }
+
+    /**
+     * Open account tab.
+     */
     @Step("Open the open account tab")
     public void openAccountTab() {
-        driver.get(openAccountTabLink);
+        driver.get(readProperty("openAccountTabLink"));
     }
 }

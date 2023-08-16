@@ -1,128 +1,125 @@
+Чек-лист:
+1. Создание клиента (Customer)
+2. Сортировка клиентов по имени (First Name)
+3. Поиск клиента
+
 id: CreateCustomer-1 (CC-1)
 Заголовок: Проверить сообщение об успешном добавлении клиента
 Шаги:
-- открыть браузер
-- перейти на страницу https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/addCust
-- заполнить поле  First Name значением testfirstname
-- заполнить поле Last Name значением testlastname
-- заполнить поле Post Code значением testpostcode
-- нажать кнопку Add Customer
+1. открыть страницу https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/addCust
+2. заполнить все поля валидными значениями (поле First Name - значение testfirstname, Last Name - testlastname, Post Code - testpostcode)
+3. нажать кнопку Add Customer
 Ожидаемый результат:
-- появляется модальное окно, содержащее текст “Customer added successfully with customer id 6”
+1. появляется модальное окно, содержащее текст “Customer added successfully with customer id 6”
 
 id: CreateCustomer-2 (CC-2)
 Заголовок: Проверить добавление клиента в список клиентов
-Предусловие: выполнить тест CreateCustomer-1
 Шаги:
-- нажать кнопку “Ок” в модальном окне
-- убедиться, что поля first name, last name и post code очистились
-- кликнуть на вкладку Customers
+1. открыть страницу https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/addCust
+2. заполнить все поля валидными значениями (поле First Name - значение testfirstname, Last Name - testlastname, Post Code - testpostcode)
+3. нажать кнопку Add Customer
+4. нажать кнопку “Ок” в модальном окне
+5. убедиться, что поля First Name, Last Name и Post Code очистились
+6. кликнуть на вкладку Customers
 Ожидаемый результат:
-- в конце таблицы есть строка со следующими значениями: в колонке First Name - testfirstname, в колонке Last Name - testlastname, в колонке Post Code - testpostcode, колонка Account Number  пустая.
+1. в конце таблицы есть строка со следующими значениями: в колонке First Name - testfirstname, в колонке Last Name - testlastname, в колонке Post Code - testpostcode, колонка Account Number пустая.
 
 id: CreateCustomer-3  (CC-3)
 Заголовок: Проверить добавление клиента в список аккаунтов
-Предусловие: выполнить тест CreateCustomer-1
 Шаги:
-- нажать кнопку “Ок” в модальном окне
-- кликнуть на вкладку Open Account
-- на открывшейся странице найти элемент customer name
-- кликнуть по customer name
+1. открыть страницу https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/addCust
+2. заполнить все поля валидными значениями (поле First Name - значение testfirstname, Last Name - testlastname, Post Code - testpostcode)
+3. нажать кнопку Add Customer
+4. нажать кнопку “Ок” в модальном окне
+5. кликнуть на вкладку Open Account
+6. на открывшейся странице кликнуть по выпадающему списку Customer Name
 Ожидаемый результат:
-- в конце выпадающего списка есть строка со значениями testfirstname testlastname
+1. в конце выпадающего списка есть строка со значениями testfirstname testlastname
 
 id: CreateCustomer-4 (CC-4)
 Заголовок: Проверить добавление покупателя с отсутствующими данными
 Шаги:
-- открыть браузер
-- перейти на страницу https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/addCust
-- кликнуть на кнопку add customer
+1. открыть страницу https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/addCust
+2. кликнуть на кнопку Add Customer
 Ожидаемый результат:
-- в поле first name появляется автофокус
+1. в поле First Name появляется автофокус
 
 id: CreateCustomer-5 (CC-5)
 Заголовок: Проверить добавление покупателя с частично отсутствующими данными
 Шаги:
-- открыть браузер
-- перейти на страницу https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/addCust
-- заполнить поле First Name значением testfirstname
-- кликнуть на кнопку add customer
+1. открыть страницу https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/addCust
+2. заполнить поле First Name значением testfirstname
+3. кликнуть на кнопку Add Customer
 Ожидаемый результат: 
-- в поле last name появляется автофокус
+1. в поле Last Name появляется автофокус
 
 id: CustomerSorting-1 (CS-1)
 Заголовок: проверить сортировку клиентов по First Name в порядке убывания
 Шаги:
-- открыть браузер
-- перейти на страницу клиентов https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list
-- кликнуть по ячейке со значением First Name
+1. открыть страницу https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list
+2. кликнуть по ячейке со значением First Name
 Ожидаемый результат:
-- первый сверху элемент в столбце First Name имеет значение Ron, третий - Hermoine, последний - Albus
+1. первый сверху элемент в столбце First Name имеет значение Ron, третий - Hermoine, последний - Albus
 
 id: CustomerSorting-2 (CS-2)
 Заголовок: проверить сортировку клиентов по имени First Name в порядке возрастания
-Предусловие: выполнить CustomerSorting-1
-Шаги: 
-- кликнуть на ячейку со значением First Name
+Шаги:
+1. открыть страницу https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list
+2. кликнуть по ячейке со значением First Name
+2. ещё раз кликнуть по ячейке со значением First Name
 Ожидаемый результат: 
-- первое значение в столбце First Name имеет значение Albus, третье - Hermoine, последнее - Ron
+1. первое значение в столбце First Name имеет значение Albus, третье - Hermoine, последнее - Ron
 
 id: FindCustomer-1 (FC-1)
 Заголовок: проверить поиск клиентов по first name
 Шаги: 
-- открыть браузер
-- перейти на странцу клиентов https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list
-- заполнить поле Search Customer значением “ha”
+1. открыть странцу  https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list
+2. заполнить поле Search Customer значением “ha”
 Ожидаемый результат: 
-- отображается только одна строка таблицы
-- значение First Name - Harry, Post Code - E725JB (другие значения проверять не нужно)
+1. отображается только одна строка таблицы
+2. строка таблицы содержит значения First Name - Harry, Post Code - E725JB
 
 id:FindCustomer-2 (FC-2)
 Заголовок: проверить поиск клиентов по last name
 Шаги:
-- открыть браузер
-- перейти на странцу клиентов https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list
-- заполнить поле Search Customer значением “lo”
+1. открыть странцу https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list
+2. заполнить поле Search Customer значением “lo”
 Ожидаемый результат:
-- отображается только одна строка таблицы
-- значение First Name - Neville, Last Name - Longbottom (другие значения проверять не нужно)
+1. отображается только одна строка таблицы
+2. строка таблицы содержит значения  First Name - Neville, Last Name - Longbottom
 
 id: FindCustomer-3 (FC-3)
 Заголовок: проверить поиск клиентов по post code
 Шаги:
-- открыть браузер
-- перейти на странцу клиентов https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list
-- заполнить поле Search Customer значением “e7”
+1. открыть  странцу https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list
+2. заполнить поле Search Customer значением “e7”
 Ожидаемый результат: 
-- отображается только одна строка таблицы
-- значение First Name - Harry, Post Code - E725JB (другие значения проверять не нужно)
+1. отображается только одна строка таблицы
+2. строка таблицы содержит значения First Name - Harry, Post Code - E725JB
 
 id FindCustomer-4 (FC-4)
 Заголовок: проверить поиск клиентов по Account Number 
 Шаги:
-- открыть браузер
-- перейти на странцу клиентов https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list
-- заполнить поле Search Customer значением “1013”
+1. открыть странцу https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list
+2. заполнить поле Search Customer значением “1013”
 Ожидаемый результат: 
-- отображается только одна строка таблицы
-- значение Last Name - Longbottom, Account Number - 1013 1014 1015 (другие значения проверять не нужно)
+1. отображается только одна строка таблицы
+2. строка таблицы содержит значения Last Name - Longbottom, Account Number - 1013 1014 1015
 
 id:FindCustomer-5 (FC-5)
 Заголовок: проверить поиск несуществующего клиента
 Шаги: 
-- открыть браузер
-- перейти на странцу клиентов https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list
-- заполнить поле Search Customer значением “dd”
+1. открыть странцу https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list
+2. заполнить поле Search Customer значением “dd”
 Ожидаемый результат: 
-- не отображается ни одной строки таблицы
+1. не отображается ни одной строки таблицы
 
 id:FindCustomer-6 (FC-6)
 Заголовок: проверить поиск нескольких клиентов
 Шаги:
-- открыть браузер
-- перейти на странцу клиентов https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list
-- заполнить поле Search Customer значением “ne”
+1. открыть странцу https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/list
+2. заполнить поле Search Customer значением “ne”
 Ожидаемый результат:
-- отображается только две строки таблицы
-- значения первой строки: First Name - Hermoine, Last Name - Granger (другие значения проверять не нужно)
-- значения второй строки: First Name - Neville, Last Name - Longbottom (другие значения проверять не нужно)
+1. отображается только две строки таблицы
+2. значения первой строки: First Name - Hermoine, Last Name - Granger
+3. значения второй строки: First Name - Neville, Last Name - Longbottom
