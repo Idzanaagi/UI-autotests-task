@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import pages.AddCust;
+import pages.AddCustomerPage;
 import pages.StartPage;
-import pages.OpenAccount;
+import pages.OpenAccountPage;
 import utils.WebdriverSetting;
 
 /**
@@ -15,9 +15,24 @@ import utils.WebdriverSetting;
  */
 public class CreateCustomerTests extends WebdriverSetting {
 
+    /**
+     * The First name data.
+     */
     private final String firstNameData = "testfirstname";
+
+    /**
+     * The Last name data.
+     */
     private final String lastNameData = "testlastname";
+
+    /**
+     * The Post code data.
+     */
     private final String postCodeData = "testpostcode";
+
+    /**
+     * The Expected alert message.
+     */
     private final String expectedAlertMessage = "Customer added successfully with customer id :6";
 
     /**
@@ -27,14 +42,14 @@ public class CreateCustomerTests extends WebdriverSetting {
     @DisplayName("CC-1, content of modal msg")
     @Description("CC-1, check the message text of the modal window when the client was successfully added")
     public void checkContentModalMsg() {
-        StartPage startPage = new StartPage(driver);
-        AddCust addCust = new AddCust(driver);
+        StartPage startPage = new StartPage(getDriver());
+        AddCustomerPage addCust = new AddCustomerPage(getDriver());
         startPage.openAddCustomerTab();
         addCust.fillFirstName(firstNameData);
         addCust.fillLastName(lastNameData);
         addCust.fillPostCode(postCodeData);
         addCust.clickAddCustomerBtn();
-        Assertions.assertEquals(expectedAlertMessage, driver.switchTo().alert().getText());
+        Assertions.assertEquals(expectedAlertMessage, getDriver().switchTo().alert().getText());
     }
 
     /**
@@ -44,14 +59,14 @@ public class CreateCustomerTests extends WebdriverSetting {
     @DisplayName("CC-2, add customer to customer page")
     @Description("CC-2, check that after adding a new client its data appears in the table customers")
     public void checkAddCustomerToCustomerPage() {
-        StartPage startPage = new StartPage(driver);
-        AddCust addCust = new AddCust(driver);
+        StartPage startPage = new StartPage(getDriver());
+        AddCustomerPage addCust = new AddCustomerPage(getDriver());
         startPage.openAddCustomerTab();
         addCust.fillFirstName(firstNameData);
         addCust.fillLastName(lastNameData);
         addCust.fillPostCode(postCodeData);
         addCust.clickAddCustomerBtn();
-        Assertions.assertEquals(expectedAlertMessage, driver.switchTo().alert().getText());
+        Assertions.assertEquals(expectedAlertMessage, getDriver().switchTo().alert().getText());
         addCust.confirmAction();
         addCust.isFieldsEmpty(); /* проверка, что поля формы очищаются после успешного добавления клиента */
         startPage.openCustomersTab();
@@ -68,15 +83,15 @@ public class CreateCustomerTests extends WebdriverSetting {
     @DisplayName("CC-3, add customer to open account page")
     @Description("CC-3, check that after adding a new client its data appears in the open account")
     public void checkAddCustomerToOpenAccountPage() {
-        StartPage startPage = new StartPage(driver);
-        AddCust addCust = new AddCust(driver);
-        OpenAccount openAccount = new OpenAccount(driver);
+        StartPage startPage = new StartPage(getDriver());
+        AddCustomerPage addCust = new AddCustomerPage(getDriver());
+        OpenAccountPage openAccount = new OpenAccountPage(getDriver());
         startPage.openAddCustomerTab();
         addCust.fillFirstName(firstNameData);
         addCust.fillLastName(lastNameData);
         addCust.fillPostCode(postCodeData);
         addCust.clickAddCustomerBtn();
-        Assertions.assertEquals(expectedAlertMessage, driver.switchTo().alert().getText());
+        Assertions.assertEquals(expectedAlertMessage, getDriver().switchTo().alert().getText());
         addCust.confirmAction();
         startPage.openAccountTab();
         openAccount.clickCustomersListSelect();
@@ -91,11 +106,11 @@ public class CreateCustomerTests extends WebdriverSetting {
     @DisplayName("CC-4, try add customer with empty data")
     @Description("CC-4, check that after adding a customer with unfilled data, the first empty field gets the focus")
     public void checkAddCustomerWithAllEmptyData() {
-        StartPage startPage = new StartPage(driver);
-        AddCust addCust = new AddCust(driver);
+        StartPage startPage = new StartPage(getDriver());
+        AddCustomerPage addCust = new AddCustomerPage(getDriver());
         startPage.openAddCustomerTab();
         addCust.clickAddCustomerBtn();
-        Assertions.assertEquals(driver.switchTo().activeElement(), addCust.firstNameField);
+        Assertions.assertEquals(getDriver().switchTo().activeElement(), addCust.getFirstNameField());
     }
 
     /**
@@ -105,11 +120,11 @@ public class CreateCustomerTests extends WebdriverSetting {
     @DisplayName("CC-5, try add customer with partially blank data")
     @Description("CC-5, check that after adding a customer with partially filled data, the first empty field gets the focus")
     public void checkAddCustomerWithPartiallyBlankData() {
-        StartPage startPage = new StartPage(driver);
-        AddCust addCust = new AddCust(driver);
+        StartPage startPage = new StartPage(getDriver());
+        AddCustomerPage addCust = new AddCustomerPage(getDriver());
         startPage.openAddCustomerTab();
         addCust.fillFirstName(firstNameData);
         addCust.clickAddCustomerBtn();
-        Assertions.assertEquals(driver.switchTo().activeElement(), addCust.lastNameField);
+        Assertions.assertEquals(getDriver().switchTo().activeElement(), addCust.getLastNameField());
     }
 }

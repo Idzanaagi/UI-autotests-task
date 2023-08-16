@@ -10,44 +10,86 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * The type Add cust.
  */
-public class AddCust {
+public class AddCustomerPage {
 
     /**
      * The Driver.
      */
-    WebDriver driver;
+    private final WebDriver driver;
 
+    /**
+     * The First name field.
+     */
     @FindBy(css = "[ng-model='fName']")
-    public WebElement firstNameField;
+    private WebElement firstNameField;
 
+    /**
+     * The Last name field.
+     */
     @FindBy(css = "[ng-model='lName']")
-    public WebElement lastNameField;
+    private WebElement lastNameField;
 
+    /**
+     * The Post code field.
+     */
     @FindBy(css = "[ng-model='postCd']")
     private WebElement postCodeField;
 
+    /**
+     * The Add customer btn.
+     */
     @FindBy(css = "[type='submit']")
     private WebElement addCustomerBtn;
 
+    /**
+     * The New cell with first name.
+     */
     @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr[6]/td[1]")
     private WebElement newCellWithFirstName;
 
+    /**
+     * The New cell with last name.
+     */
     @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr[6]/td[2]")
     private WebElement newCellWithLastName;
 
+    /**
+     * The New cell with post code.
+     */
     @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr[6]/td[3]")
     private WebElement newCellWithPostCode;
 
+    /**
+     * The New cell with account number.
+     */
     @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr[6]/td[4]")
     private WebElement newCellWithAccountNumber;
 
+
     /**
      * Instantiates a new Add cust.
-     * @param driver the driver
+     *
+     * @param webDriver the web driver
      */
-    public AddCust(final WebDriver driver) {
-        this.driver = driver;
+    public AddCustomerPage(final WebDriver webDriver) {
+        this.driver = webDriver;
         PageFactory.initElements(driver, this);
+    }
+
+    /**
+     * Gets first name field.
+     * @return the first name field
+     */
+    public WebElement getFirstNameField() {
+        return firstNameField;
+    }
+
+    /**
+     * Gets last name field.
+     * @return the last name field
+     */
+    public WebElement getLastNameField() {
+        return lastNameField;
     }
 
     /**

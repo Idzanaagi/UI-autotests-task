@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import pages.Customers;
+import pages.CustomersPage;
 import pages.StartPage;
 import utils.WebdriverSetting;
 
@@ -23,8 +23,8 @@ public class FindCustomerTests extends WebdriverSetting {
     @DisplayName("FC-1, find by first name")
     @Description("FC-1, check if the search by first name works correctly")
     public void findCustomersByFirstName() {
-        StartPage startPage = new StartPage(driver);
-        Customers customers = new Customers(driver);
+        StartPage startPage = new StartPage(getDriver());
+        CustomersPage customers = new CustomersPage(getDriver());
         startPage.openCustomersTab();
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerField("ha");
@@ -40,8 +40,8 @@ public class FindCustomerTests extends WebdriverSetting {
     @DisplayName("FC-2, find by last name")
     @Description("FC-2, check if the search by last name works correctly")
     public void findCustomersByLastName() {
-        StartPage startPage = new StartPage(driver);
-        Customers customers = new Customers(driver);
+        StartPage startPage = new StartPage(getDriver());
+        CustomersPage customers = new CustomersPage(getDriver());
         startPage.openCustomersTab();
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerField("lo");
@@ -57,8 +57,8 @@ public class FindCustomerTests extends WebdriverSetting {
     @DisplayName("FC-3, find by post code")
     @Description("FC-3, check if the search by post code works correctly")
     public void findCustomersByPostCode() {
-        StartPage startPage = new StartPage(driver);
-        Customers customers = new Customers(driver);
+        StartPage startPage = new StartPage(getDriver());
+        CustomersPage customers = new CustomersPage(getDriver());
         startPage.openCustomersTab();
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerField("e7");
@@ -74,8 +74,8 @@ public class FindCustomerTests extends WebdriverSetting {
     @DisplayName("FC-4, find by account")
     @Description("FC-4, check if the search by account number works correctly")
     public void findCustomersByAccountNumber() {
-        StartPage startPage = new StartPage(driver);
-        Customers customers = new Customers(driver);
+        StartPage startPage = new StartPage(getDriver());
+        CustomersPage customers = new CustomersPage(getDriver());
         startPage.openCustomersTab();
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerField("1013");
@@ -91,8 +91,8 @@ public class FindCustomerTests extends WebdriverSetting {
     @DisplayName("FC-5, find non-existed customer")
     @Description("FC-5, check if the search by non-existed customer works correctly")
     public void findNonExistedCustomer() {
-        StartPage startPage = new StartPage(driver);
-        Customers customers = new Customers(driver);
+        StartPage startPage = new StartPage(getDriver());
+        CustomersPage customers = new CustomersPage(getDriver());
         startPage.openCustomersTab();
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerField("dd");
@@ -106,8 +106,8 @@ public class FindCustomerTests extends WebdriverSetting {
     @DisplayName("FC-6, find multiple customers")
     @Description("FC-5, check the correctness of the search of several clients")
     public void findMultipleCustomers() {
-        StartPage startPage = new StartPage(driver);
-        Customers customers = new Customers(driver);
+        StartPage startPage = new StartPage(getDriver());
+        CustomersPage customers = new CustomersPage(getDriver());
         startPage.openCustomersTab();
         customers.clickSearchCustomersField();
         customers.fillSearchCustomerField("ne");

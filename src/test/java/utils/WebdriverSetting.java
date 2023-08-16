@@ -16,19 +16,20 @@ public class WebdriverSetting {
     /**
      * The Driver.
      */
-    public WebDriver driver;
+    private WebDriver driver;
 
     /**
      * Sets up.
      */
     @BeforeEach
     public void setUp() {
+        final int implicitlyWaitTime = 10;
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless=new");
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
         System.setProperty("webdriver.chrome.driver", Objects.requireNonNull(getClass().getClassLoader().getResource("drivers/chromedriver.exe")).getFile());
-        WebDriver.Timeouts timeouts = driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        WebDriver.Timeouts timeouts = driver.manage().timeouts().implicitlyWait(implicitlyWaitTime, TimeUnit.SECONDS);
     }
 
     /**
@@ -38,4 +39,13 @@ public class WebdriverSetting {
     public void close() {
         driver.quit();
     }
+
+    /**
+     * Gets driver.
+     * @return the driver
+     */
+    public WebDriver getDriver() {
+        return driver;
+    }
+
 }

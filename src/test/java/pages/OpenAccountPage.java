@@ -9,25 +9,31 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * The type Open account.
  */
-public class OpenAccount {
+public class OpenAccountPage {
 
     /**
      * The Driver.
      */
-    WebDriver driver;
+    private final WebDriver driver;
 
+    /**
+     * The customers list select.
+     */
     @FindBy(id = "userSelect")
     private WebElement customersListSelect;
 
+    /**
+     * The last customers list option.
+     */
     @FindBy(xpath = "//*[@id=\"userSelect\"]/option[7]")
     private WebElement lastCustomersListOption;
 
     /**
      * Instantiates a new Open account.
-     * @param driver the driver
+     * @param webDriver the driver
      */
-    public OpenAccount(final WebDriver driver) {
-        this.driver = driver;
+    public OpenAccountPage(final WebDriver webDriver) {
+        this.driver = webDriver;
         PageFactory.initElements(driver, this);
     }
 
