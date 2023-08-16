@@ -11,55 +11,91 @@ import java.util.List;
 /**
  * The type Customers.
  */
-public class Customers {
+public class CustomersPage {
 
     /**
      * The Driver.
      */
-    WebDriver driver;
+    private final WebDriver driver;
 
+    /**
+     * The First element in table column.
+     */
     @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr[1]/td[1]") /* Без фильтрации, когда в таблице несколько элементов*/
     private WebElement firstElementInTableColumn;
 
+    /**
+     * The Middle element in first name column.
+     */
     @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr[3]/td[1]")
     private WebElement middleElementInFirstNameColumn;
 
+    /**
+     * The Last element in first name column.
+     */
     @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr[5]/td[1]")
     private WebElement lastElementInFirstNameColumn;
 
+    /**
+     * The First name cell.
+     */
     @FindBy(xpath = "//table[contains(@class,'table')]/thead/tr/td[1]")
-    private WebElement firstNameCeil;
+    private WebElement firstNameCell;
 
+    /**
+     * The Search customers field.
+     */
     @FindBy(css = "[ng-model='searchCustomer']")
     private WebElement searchCustomersField;
 
+    /**
+     * The Firstname value.
+     */
     @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr/td[1]") /* С фильтрацией, когда в таблице только один элемент */
     private WebElement firstnameValue;
 
+    /**
+     * The Lastname value.
+     */
     @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr/td[2]")
     private WebElement lastnameValue;
 
+    /**
+     * The Post code element.
+     */
     @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr/td[3]")
     private WebElement postCodeElement;
 
+    /**
+     * The Account number element.
+     */
     @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr/td[4]")
     private WebElement accountNumberElement;
 
+    /**
+     * The Firstname el col 2.
+     */
     @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr[2]/td[1]") /* С фильтрацией, когда в таблице больше 1 элемента */
     private WebElement firstnameElCol2;
 
+    /**
+     * The Lastname el col 2.
+     */
     @FindBy(xpath = "//table[contains(@class,'table')]/tbody/tr[2]/td[2]")
     private WebElement lastnameElCol2;
 
+    /**
+     * All elements in list.
+     */
     @FindAll({ @FindBy(tagName = "tr"), })
     private List<WebElement> allElementsInList;
 
     /**
      * Instantiates a new Customers.
-     * @param driver the driver
+     * @param webDriver the web driver
      */
-    public Customers(final WebDriver driver) {
-        this.driver = driver;
+    public CustomersPage(final WebDriver webDriver) {
+        this.driver = webDriver;
         PageFactory.initElements(driver, this);
     }
 
@@ -68,7 +104,7 @@ public class Customers {
      */
     @Step("Click on the cell first name")
     public void sortByFirstName() {
-        firstNameCeil.click();
+        firstNameCell.click();
     }
 
     /**

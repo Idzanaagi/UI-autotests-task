@@ -9,8 +9,14 @@ import java.util.Properties;
  */
 public final class DataProperties {
 
+    /**
+     * The Properties.
+     */
     private static final Properties PROPERTIES = new Properties();
 
+    /**
+     * The File path.
+     */
     private static final String FILE_PATH = "src/test/resources/testData.properties";
         static {
             try (FileInputStream ip = new FileInputStream(FILE_PATH)) {

@@ -14,14 +14,14 @@ public class StartPage {
     /**
      * The Driver.
      */
-    WebDriver driver;
+    private final WebDriver driver;
 
     /**
      * Instantiates a new Start page.
-     * @param driver the driver
+     * @param webDriver the driver
      */
-    public StartPage(final WebDriver driver) {
-        this.driver = driver;
+    public StartPage(final WebDriver webDriver) {
+        this.driver = webDriver;
         PageFactory.initElements(driver, this);
     }
 
